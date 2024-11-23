@@ -10,3 +10,11 @@
     src: url(/font/Vazirmatn-Regular.ttf) format("woff");
   }
 }
+
+.active-slide {
+  @apply border-2 border-white/70;
+}
+
+.show {
+  opacity: 1;
+}
