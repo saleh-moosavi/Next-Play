@@ -79,7 +79,7 @@ export default function Header() {
       <div className="mt-5 relative">
         <FaAngleRight
           onClick={() => prewSlide(slides[currentSlide].id)}
-          className="absolute top-1/2 -translate-y-1/2 bg-purple-500 -right-2 text-white rounded-full cursor-pointer"
+          className="absolute top-1/2 -translate-y-1/2 bg-purple-500 -right-2 text-white rounded-full cursor-pointer hover:scale-125"
         />
         <div className="grid grid-cols-4 gap-2 *:rounded-md *:object-cover h-10 *:h-full *:cursor-pointer">
           {slides.map((slide) => (
@@ -93,7 +93,7 @@ export default function Header() {
         </div>
         <FaAngleLeft
           onClick={() => nextSlide(slides[currentSlide].id)}
-          className="absolute top-1/2 -translate-y-1/2 bg-purple-500 -left-2 text-white rounded-full cursor-pointer"
+          className="absolute top-1/2 -translate-y-1/2 bg-purple-500 -left-2 text-white rounded-full cursor-pointer hover:scale-125"
         />
       </div>
     </div>

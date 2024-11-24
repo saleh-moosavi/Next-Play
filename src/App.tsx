@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="bg-slate-800 font-[vazir]" dir="rtl">
-      <div className="xl:max-w-5xl xl:mx-auto">
+      <div className="lg:max-w-5xl lg:mx-auto">
         <BrowserRouter>
           <Navbar />
           <Routes>
