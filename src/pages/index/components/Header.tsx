@@ -43,6 +43,12 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    return () => {
+      clearTimeout(slideTimeout);
+    };
+  }, [currentSlide]);
+
   return (
     <div className="grid grid-cols-3 p-5 relative">
       <div

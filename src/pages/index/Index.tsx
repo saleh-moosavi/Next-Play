@@ -1,6 +1,7 @@
 import Articles from "./components/Articles";
 import Header from "./components/Header";
 import Newest from "./components/Newest";
+import Reviews from "./components/Reviews";
 
 export default function Index() {
   return (
@@ -8,6 +9,7 @@ export default function Index() {
       <Header />
       <Newest />
       <Articles />
+      <Reviews />
     </div>
   );
 }
