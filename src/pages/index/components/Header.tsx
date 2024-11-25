@@ -50,7 +50,7 @@ export default function Header() {
   }, [currentSlide]);
 
   return (
-    <div className="grid grid-cols-3 p-5 relative">
+    <div className="grid grid-cols-3 p-5 xl:px-0 relative">
       <div
         className="col-span-3 opacity-0 transition-all duration-300"
         ref={slideRef}

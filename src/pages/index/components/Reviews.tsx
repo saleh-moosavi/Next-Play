@@ -2,7 +2,7 @@ import ReviewItem from "./ReviewItem";
 
 export default function Reviews() {
   return (
-    <div className="pb-10 px-5 pt-10 xl:px-0 text-center">
+    <div className="pb-10 px-5 pt-5 xl:px-0 text-center">
       <h3 className="border-b-2 w-fit mx-auto border-white text-white pb-2 my-5">
         نقد و بررسی ها
       </h3>

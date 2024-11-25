@@ -5,7 +5,7 @@ export default function ReviewItem() {
     <div className="relative w-full h-72 rounded-2xl overflow-hidden cursor-pointer group">
       <img
         className="w-full h-full object-cover group-hover:blur-sm transition-all duration-700"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxSuF0P3ESPW5-X7AixdtneKtQfX2MwByC6w&s"
+        src="https://i.redd.it/yumu0vxji7w71.jpg"
       />
       <div className="absolute w-full flex flex-col justify-center items-center bottom-5 text-white text-center group-hover:bottom-1/2 group-hover:translate-y-1/2 transition-all duration-700">
         <h3 className="font-semibold mb-2">ویدئو نقد و بررسی</h3>
