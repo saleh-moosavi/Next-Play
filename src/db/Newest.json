@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "img": "https://www.creocommunity.pt/wp-content/uploads/2024/02/Modern-Warfare-3-e-Warzone-Season-2-chegam-em-7.jpg",
+    "title": "بازی Call of Duty Warzone برای کامپیوتر",
+    "price": 150
+  },
+  {
+    "id": 1,
+    "img": "https://techcrunch.com/wp-content/uploads/2018/07/fortnite03.jpg",
+    "title": "بازی Fortnite برای کنسول PS4",
+    "price": 220
+  },
+  {
+    "id": 2,
+    "img": "https://www.digitaltrends.com/wp-content/uploads/2024/03/Marvel-Rivals-2.jpg?resize=1000%2C600&p=1",
+    "title": "بازی Marvel Rivals 2 برای ایکس باکس",
+    "price": 500
+  },
+  {
+    "id": 3,
+    "img": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/forza-5/0/0f/Forza_motorsport_5.jpg",
+    "title": "بازی Forza Horizen 5 برای کامپیوتر",
+    "price": 410
+  }
+]

@@ -1,4 +1,5 @@
 import NewestItem from "./NewestItem";
+import items from "../../../db/Newest.json";
 
 export default function Newest() {
   return (
@@ -15,10 +16,9 @@ export default function Newest() {
         </div>
       </section>
       <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 py-5">
-        <NewestItem />
-        <NewestItem />
-        <NewestItem />
-        <NewestItem />
+        {items.map((item) => (
+          <NewestItem item={item} />
+        ))}
       </section>
     </div>
   );
