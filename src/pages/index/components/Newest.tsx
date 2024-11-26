@@ -1,14 +1,30 @@
 import NewestItem from "./NewestItem";
 import items from "../../../db/Newest.json";
+import { useState } from "react";
 
 export default function Newest() {
+  const [data, setData] = useState(items);
+  const [filter, setFilter] = useState("sale");
+
+  const changeFilter = (e: any) => {
+    setFilter(e.target.value);
+    const newData = items.filter((item) => {
+      return String(Object.keys(item)).includes(e.target.value);
+    });
+    setData(newData);
+  };
+
   return (
     <div className="px-5 lg:px-0 my-10">
       <section className="flex justify-between items-center">
         <h2 className="font-semibold text-white">جدیدترین بازی های فروشگاه</h2>
         <div className="px-5 bg-gray-600 rounded-lg">
-          <select className="*:text-white *:bg-gray-600 *:w-52 text-gray-300 text-xs py-2 bg-transparent border-none outline-none">
-            <option value="sell">پرفروش ترین</option>
+          <select
+            value={filter}
+            onChange={changeFilter}
+            className="*:text-white *:bg-gray-600 *:w-52 text-gray-300 text-xs py-2 bg-transparent border-none outline-none"
+          >
+            <option value="sale">پرفروش ترین</option>
             <option value="view">پربازدیدترین</option>
             <option value="rate">بالاترین امتیاز</option>
             <option value="download">بیشترین دانلود</option>
@@ -16,9 +32,9 @@ export default function Newest() {
         </div>
       </section>
       <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 py-5">
-        {items.map((item) => (
-          <NewestItem item={item} />
-        ))}
+        {data.map(
+          (item, index) => index < 4 && <NewestItem key={item.id} item={item} />
+        )}
       </section>
     </div>
   );

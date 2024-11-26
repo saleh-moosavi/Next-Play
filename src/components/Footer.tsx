@@ -1,4 +1,10 @@
-import { FaArrowLeft } from "react-icons/fa6";
+import {
+  FaArrowLeft,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
@@ -62,6 +68,19 @@ export default function Footer() {
           </div>
         </section>
       </footer>
+      <article className="bg-orange-400 text-white">
+        <section className="flex justify-between items-center py-3 px-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
+          <p className="text-xs font-semibold">
+            کپی از مطالب تنها با کسب مجوز امکان پذیر است
+          </p>
+          <div className="flex gap-x-3 *:size-5">
+            <FaInstagram />
+            <FaWhatsapp />
+            <FaLinkedin />
+            <FaTwitter />
+          </div>
+        </section>
+      </article>
     </section>
   );
 }

@@ -3,24 +3,88 @@
     "id": 0,
     "img": "https://www.creocommunity.pt/wp-content/uploads/2024/02/Modern-Warfare-3-e-Warzone-Season-2-chegam-em-7.jpg",
     "title": "بازی Call of Duty Warzone برای کامپیوتر",
-    "price": 150
+    "price": 150,
+    "rate": true,
+    "download": true
   },
   {
     "id": 1,
     "img": "https://techcrunch.com/wp-content/uploads/2018/07/fortnite03.jpg",
     "title": "بازی Fortnite برای کنسول PS4",
-    "price": 220
+    "price": 220,
+    "sale": true,
+    "download": true
   },
   {
     "id": 2,
     "img": "https://www.digitaltrends.com/wp-content/uploads/2024/03/Marvel-Rivals-2.jpg?resize=1000%2C600&p=1",
     "title": "بازی Marvel Rivals 2 برای ایکس باکس",
-    "price": 500
+    "price": 500,
+    "sale": true
   },
   {
     "id": 3,
     "img": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/forza-5/0/0f/Forza_motorsport_5.jpg",
     "title": "بازی Forza Horizen 5 برای کامپیوتر",
-    "price": 410
+    "price": 410,
+    "rate": true,
+    "download": true
+  },
+  {
+    "id": 4,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Microsoft.Flight.Simulator-2024.Grid_-qxm2sa834ut5adxfqqp0q9i2k53a1qejpjsoolj770.webp",
+    "title": "دانلود بازی Microsoft Flight Simulator 2024 برای کامپیوتر",
+    "price": 150,
+    "sale": true
+  },
+  {
+    "id": 5,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Ara-History.Untold.Grid_-quo0c9qpnoxs5k2t15yfgtu9k3ps2fss5ur4uwsnxo.webp",
+    "title": "دانلود بازی Ara: History Untold برای کامپیوتر",
+    "price": 220,
+    "sale": true
+  },
+  {
+    "id": 6,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/A.Quiet_.Place-The.Road_.Ahead_.Grid_-qvyvo4cdmuotxq8vm11d4bvlcd0e7go8zzwumva8fg.webp",
+    "title": "دانلود بازی A Quiet Place: The Road Ahead برای کامپیوتر",
+    "price": 500,
+    "rate": true,
+    "download": true
+  },
+  {
+    "id": 7,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Empyrion-Galactic.Survival.Grid_-qb8gxd2zmtwl6bdt92k16wxd9i1rht3n63559pyp0s.webp",
+    "title": "دانلود بازی Jujutsu Kaisen Cursed Clash برای کامپیوتر",
+    "price": 410,
+    "view": true
+  },
+  {
+    "id": 8,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Bodycam.Grid_-qpscnoblpjp4p869aku4ro23pkdon9rzu4ihe9kg8c.webp",
+    "title": "دانلود بازی Bodycam برای کامپیوتر",
+    "price": 150,
+    "view": true
+  },
+  {
+    "id": 9,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Sea.of_.Stars_.Grid_-qc5nrotoqn9wdgoasr06owdfujwrxdzsr8gbd66ywc.webp",
+    "title": "دانلود بازی Sea of Stars برای کامپیوتر",
+    "price": 220,
+    "view": true
+  },
+  {
+    "id": 10,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/No.Mans_.Sky_.Slider-pxs8hq01pz45kueai0733x83vt2lza2eynp6bkre3w.webp",
+    "title": "دانلود بازی No Man’s Sky برای کامپیوتر",
+    "price": 500,
+    "rate": true
+  },
+  {
+    "id": 11,
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Horizon.Zero_.Dawn_.Remastered.Grid_-qwdo3t7n7pta8c3trd9qrfh6o1wi172sb9b55f5ovg.webp",
+    "title": "دانلود بازی Horizon Zero Dawn™ Remastered برای کامپیوتر",
+    "price": 410,
+    "view": true
   }
 ]
