@@ -2,7 +2,7 @@ import NewestItem from "./NewestItem";
 
 export default function Newest() {
   return (
-    <div className="px-5 xl:px-0 my-10">
+    <div className="px-5 lg:px-0 my-10">
       <section className="flex justify-between items-center">
         <h2 className="font-semibold text-white">جدیدترین بازی های فروشگاه</h2>
         <div className="px-5 bg-gray-600 rounded-lg">

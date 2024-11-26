@@ -6,7 +6,7 @@ import Trailers from "./components/Trailers";
 
 export default function Index() {
   return (
-    <div className="xl:max-w-5xl xl:mx-auto">
+    <div className="lg:max-w-5xl lg:mx-auto">
       <Header />
       <Newest />
       <Articles />

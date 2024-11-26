@@ -3,7 +3,7 @@ import TrailerTop from "./TrailerTop";
 
 export default function Trailers() {
   return (
-    <div className="pb-10 px-5 pt-5 xl:px-0 text-center">
+    <div className="pb-10 px-5 pt-5 lg:px-0 text-center">
       <h3 className="border-b-2 w-fit mx-auto border-white text-white pb-2 my-5">
         تریلر بازی ها
       </h3>
@@ -16,7 +16,7 @@ export default function Trailers() {
           <TrailerBottom />
         </article>
       </section>
-      <button className="bg-white/20 rounded-lg text-white px-4 py-1 mt-8 text-xs font-semibold">
+      <button className="bg-white/20 rounded-lg text-white px-4 py-2 mt-8 text-xs font-semibold">
         مشاهده همه
       </button>
     </div>

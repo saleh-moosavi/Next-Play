@@ -1,6 +1,6 @@
 export default function ArticleLeft() {
   return (
-    <div className="flex gap-x-2 items-center bg-gray-700 hover:bg-purple-900/40 transition-all duration-700 p-2 rounded-xl text-white group">
+    <div className="flex w-full gap-x-2 items-center bg-gray-700 hover:bg-purple-900/40 transition-all duration-700 p-2 rounded-xl text-white group">
       <div className="h-32 w-1/2 rounded-xl relative overflow-hidden">
         <div className="absolute w-full h-full border-2 border-white opacity-0 rounded-xl scale-110 group-hover:scale-75 group-hover:opacity-100 transition-all duration-700 z-50"></div>
         <img

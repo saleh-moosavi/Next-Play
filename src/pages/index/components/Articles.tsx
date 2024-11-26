@@ -3,7 +3,7 @@ import ArticleRight from "./ArticleRight";
 
 export default function Articles() {
   return (
-    <div className="pb-10 px-5 pt-5 xl:px-0">
+    <div className="pb-10 px-5 pt-5 lg:px-0">
       <h3 className="border-b-2 w-fit mx-auto border-white text-white pb-2 my-5">
         جدیدترین مقالات
       </h3>

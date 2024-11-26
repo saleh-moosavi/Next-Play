@@ -2,7 +2,7 @@ import { IoIosAdd } from "react-icons/io";
 
 export default function NewestItem() {
   return (
-    <div className="rounded-2xl overflow-hidden bg-gray-700 hover:scale-105 transition-all duration-300">
+    <div className="rounded-2xl overflow-hidden bg-gray-700 hover:scale-105 transition-all duration-700">
       <img
         className="w-full object-cover h-36"
         src="https://techcrunch.com/wp-content/uploads/2018/07/fortnite03.jpg"
