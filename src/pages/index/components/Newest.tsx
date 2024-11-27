@@ -8,7 +8,7 @@ export default function Newest() {
 
   const changeFilter = (e: any) => {
     setFilter(e.target.value);
-    const newData = items.filter((item) => {
+    const newData = items.filter((item: any) => {
       return String(Object.keys(item)).includes(e.target.value);
     });
     setData(newData);

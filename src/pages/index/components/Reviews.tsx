@@ -1,4 +1,5 @@
 import ReviewItem from "./ReviewItem";
+import reviews from "../../../db/reviews.json";
 
 export default function Reviews() {
   return (
@@ -7,9 +8,9 @@ export default function Reviews() {
         نقد و بررسی ها
       </h3>
       <section className="grid grid-cols-3 items-center justify-items-center gap-5 mt-10">
-        <ReviewItem />
-        <ReviewItem />
-        <ReviewItem />
+        {reviews.map((item: any) => (
+          <ReviewItem data={item} />
+        ))}
       </section>
       <button className="bg-white/20 rounded-lg text-white px-4 py-1 mt-8 text-xs font-semibold">
         مشاهده همه
