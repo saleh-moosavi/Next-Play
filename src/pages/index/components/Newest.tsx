@@ -1,5 +1,5 @@
 import NewestItem from "./NewestItem";
-import items from "../../../db/Newest.json";
+import items from "../../../db/newest.json";
 import { useState } from "react";
 
 export default function Newest() {

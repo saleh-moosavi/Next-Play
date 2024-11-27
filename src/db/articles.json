@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "type": ["اخبار", "ورزشی"],
+    "title": "بازی NBA 2K 2023 رکورد پرفروش ترین بازی ورزشی را شکست",
+    "views": 200,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrm13OebqugZ5IXFd47DeofmfM_yXINTkRqQ&s"
+  },
+  {
+    "id": 1,
+    "type": ["بازی های جدید", "اکشن"],
+    "title": "نسخه جدید اساسین کرید با عنوان میراژ منتشر شد",
+    "views": 542,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpxLk7tWRcS9xE08AS1CcHx7rvCtaDKOxMg&s"
+  },
+  {
+    "id": 2,
+    "type": ["موسیقی"],
+    "title": "موسیقی بازی The Last Of Us رکورد دار بیشترین دانلود",
+    "views": 34,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPLdSZKkaJbBqfoILt8b3s_R4_RpT0Plui5w&s"
+  },
+  {
+    "id": 3,
+    "type": ["فکری", "پازل"],
+    "title": "بازی Hello Neighbor منتشر شد",
+    "desc": "سلام همسایه از خاص ترین ، زیباترین و محبوب ترین بازیهای ماجراجوییترسناک با ساخت فوق العاده از tinyBuild برای اندروید است که تا دقایقی پیش",
+    "img": "https://bloody-disgusting.com/wp-content/uploads/2021/03/helloneighbor2.jpg"
+  },
+  {
+    "id": 4,
+    "type": ["اول شخص", "تیراندازی"],
+    "title": "دانلود بازی War Thunder برای ایکس باکس",
+    "desc": "War Thunder جامع‌ترین بازی نظامی MMO است که از اوایل قرن بیستم تا پیشرفته‌ترین واحدهای رزمی مدرن به هوانوردی، وسایل نقلیه زرهی و کشتی‌های دریایی اختصاص داده شده است.",
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/War.Thunder.Grid_-qxadq7gaw4jm9vvq9kuuaco11lbmv7w0c18ts4kch8.webp"
+  },
+  {
+    "id": 5,
+    "type": ["فکری", "پازل"],
+    "title": "دانلود بازی Battlefield™ 1 برای کامپیوتر",
+    "desc": "Battlefield™ 1 شما را به جنگ بزرگ، WW1 بازمی‌گرداند، جایی که فناوری جدید و درگیری‌های جهانی چهره جنگ را برای همیشه تغییر داد.",
+    "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Battlefield-1.Grid_-qx8hb39hx4q2rhp14vtcfwsa0lpkghhkcqnp54nhgs.webp"
+  }
+]

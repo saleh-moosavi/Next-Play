@@ -1,5 +1,6 @@
 import ArticleLeft from "./ArticleLeft";
 import ArticleRight from "./ArticleRight";
+import articles from "../../../db/articles.json";
 
 export default function Articles() {
   return (
@@ -8,11 +9,15 @@ export default function Articles() {
         جدیدترین مقالات
       </h3>
       <section className="grid grid-cols-2 gap-5 mt-10">
-        <ArticleRight />
+        <ArticleRight allArticles={articles} />
         <article className="grid grid-rows-3 justify-center gap-5">
-          <ArticleLeft />
-          <ArticleLeft />
-          <ArticleLeft />
+          {articles.map(
+            (article) =>
+              article.id < 3 &&
+              article.views && (
+                <ArticleLeft key={article.id} article={article} />
+              )
+          )}
         </article>
       </section>
     </div>
