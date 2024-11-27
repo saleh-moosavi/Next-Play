@@ -33,7 +33,8 @@ export default function Newest() {
       </section>
       <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 py-5">
         {data.map(
-          (item, index) => index < 4 && <NewestItem key={item.id} item={item} />
+          (item: any, index: any) =>
+            index < 4 && <NewestItem key={item.id} item={item} />
         )}
       </section>
     </div>
