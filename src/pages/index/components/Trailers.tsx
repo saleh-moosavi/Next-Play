@@ -1,5 +1,6 @@
 import TrailerBottom from "./TrailerBottom";
 import TrailerTop from "./TrailerTop";
+import trailers from "../../../db/trailers.json";
 
 export default function Trailers() {
   return (
@@ -10,10 +11,9 @@ export default function Trailers() {
       <section className="w-full flex flex-col items-center gap-5">
         <TrailerTop />
         <article className="w-full grid grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center items-center">
-          <TrailerBottom />
-          <TrailerBottom />
-          <TrailerBottom />
-          <TrailerBottom />
+          {trailers.map((item: any) => (
+            <TrailerBottom data={item} />
+          ))}
         </article>
       </section>
       <button className="bg-white/20 rounded-lg text-white px-4 py-2 mt-8 text-xs font-semibold">

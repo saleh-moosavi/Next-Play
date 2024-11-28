@@ -43,7 +43,6 @@ export default function ArticleRight({ allArticles }: any) {
     containerRef?.current.classList.add("show");
     return () => {
       clearTimeout(slideTimeout);
-      console.log("1");
     };
   }, [currentArt]);
 
