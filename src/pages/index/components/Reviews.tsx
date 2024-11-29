@@ -1,5 +1,6 @@
 import ReviewItem from "./ReviewItem";
 import reviews from "../../../db/reviews.json";
+import Button from "../../../components/Button";
 
 export default function Reviews() {
   return (
@@ -12,9 +13,7 @@ export default function Reviews() {
           <ReviewItem data={item} />
         ))}
       </section>
-      <button className="bg-white/20 rounded-lg text-white px-4 py-1 mt-8 text-xs font-semibold">
-        مشاهده همه
-      </button>
+      <Button />
     </div>
   );
 }

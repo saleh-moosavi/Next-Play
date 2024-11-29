@@ -1,6 +1,7 @@
 import TrailerBottom from "./TrailerBottom";
 import TrailerTop from "./TrailerTop";
 import trailers from "../../../db/trailers.json";
+import Button from "../../../components/Button";
 
 export default function Trailers() {
   return (
@@ -16,9 +17,7 @@ export default function Trailers() {
           ))}
         </article>
       </section>
-      <button className="bg-white/20 rounded-lg text-white px-4 py-2 mt-8 text-xs font-semibold">
-        مشاهده همه
-      </button>
+      <Button />
     </div>
   );
 }
