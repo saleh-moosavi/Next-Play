@@ -10,9 +10,9 @@ import { MdEmail } from "react-icons/md";
 export default function Footer() {
   return (
     <section className=" bg-gray-300/10">
-      <footer className="grid grid-cols-12 p-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
+      <footer className="grid grid-cols-12 gap-5 md:gap-0 p-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
         {/* section 1 */}
-        <section className="col-span-4 text-white justify-self-start">
+        <section className="md:col-span-4 col-span-6 text-white justify-self-center md:justify-self-start">
           <h3 className="mb-5">داغ ترین مطالب</h3>
           <article className="flex gap-x-2 text-xs items-center cursor-pointer">
             <img
@@ -38,7 +38,7 @@ export default function Footer() {
         </section>
 
         {/* section 2 */}
-        <section className="col-span-3 text-white justify-self-center">
+        <section className="md:col-span-3 col-span-6 text-white justify-self-center">
           <h3 className="mb-5">پربازدیدترین صفحات</h3>
           <ul className="*:text-xs flex flex-col gap-y-2 *:cursor-pointer">
             <li>مقالات</li>
@@ -50,7 +50,7 @@ export default function Footer() {
         </section>
 
         {/* section 3 */}
-        <section className="col-span-5 text-white justify-self-end w-full max-w-72">
+        <section className="md:col-span-5 col-span-12 text-white justify-self-center md:justify-self-center w-full max-w-72">
           <h3 className="mb-5">عضویت در خبرنامه</h3>
           <label className="flex items-center gap-x-2 w-full h-7 relative">
             <input
@@ -74,11 +74,11 @@ export default function Footer() {
 
       {/* second footer */}
       <article className="bg-orange-400 text-white">
-        <section className="flex justify-between items-center py-3 px-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
-          <p className="text-xs font-semibold select-none">
+        <section className="flex md:justify-between gap-2 md:gap-0 flex-col md:flex-row items-center py-3 px-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
+          <p className="text-xs font-semibold select-none order-1">
             کپی از مطالب تنها با کسب مجوز امکان پذیر است
           </p>
-          <div className="flex gap-x-3 *:size-5 hover:*:scale-110 *:transition-all *:duration-300 *:cursor-pointer">
+          <div className="flex gap-x-3 *:size-5 hover:*:scale-110 *:transition-all *:duration-300 *:cursor-pointer md:order-3">
             <FaInstagram />
             <FaWhatsapp />
             <FaLinkedin />
