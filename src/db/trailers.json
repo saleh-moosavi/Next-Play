@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Enotria-The.Last_.Song_.Grid_-quaa7z10lkxxcpnpt0ivv98kc9hjmbnblnjmzoe0n8.webp",
     "duration": "02:45",
     "title": "تریلر زیبای بازی Enotria: The Last Song",
@@ -8,6 +9,7 @@
     "publisher": "نسیم"
   },
   {
+    "id": 2,
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFUhqaH_y-P7yp6QFby87RfBfR0NI-SkisIA&s",
     "duration": "05:24",
     "title": "تریلر بازی Marvel`s Spider-Man 2 منتشر شد",
@@ -16,6 +18,7 @@
     "publisher": "محمد"
   },
   {
+    "id": 3,
     "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Lords.of_.the_.Fallen.Grid_-qdxngu9757ck06qd1zzcambvl2hdcn0erx2gmh3a2s.webp",
     "duration": "01:58",
     "title": "تریلر جذاب بازی Lords of the Fallen منتشر شد",
@@ -24,6 +27,7 @@
     "publisher": "کیانوش"
   },
   {
+    "id": 4,
     "img": "https://gamebato.ir/wp-content/uploads/elementor/thumbs/The.Witcher.3.Wil_.Hunt_.Complete.Edition.Profile.Grid_-pz6y2m5880wlpe7w95tg73i2vko8krm2ikp2d4g0jo.jpg",
     "duration": "03:21",
     "title": "نخستین تریلر بازی The Witcher 3: Wild Hunt",

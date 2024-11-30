@@ -13,7 +13,7 @@ export default function Trailers() {
         <TrailerTop />
         <article className="w-full grid grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center items-center">
           {trailers.map((item: any) => (
-            <TrailerBottom data={item} />
+            <TrailerBottom key={item.id} data={item} />
           ))}
         </article>
       </section>

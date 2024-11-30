@@ -10,7 +10,7 @@ export default function Reviews() {
       </h3>
       <section className="grid grid-cols-3 items-center justify-items-center gap-5 mt-10">
         {reviews.map((item: any) => (
-          <ReviewItem data={item} />
+          <ReviewItem key={item.id} data={item} />
         ))}
       </section>
       <Button />
