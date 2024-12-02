@@ -31,7 +31,7 @@ export default function Newest() {
           </select>
         </div>
       </section>
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 py-5">
+      <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 mt-5 py-5">
         {data.map(
           (item: any, index: any) =>
             index < 4 && <NewestItem key={item.id} item={item} />
