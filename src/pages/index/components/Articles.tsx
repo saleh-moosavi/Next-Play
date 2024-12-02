@@ -8,7 +8,7 @@ export default function Articles() {
       <h3 className="border-b-2 w-fit mx-auto border-white text-white pb-2 my-5">
         جدیدترین مقالات
       </h3>
-      <section className="grid grid-cols-2 gap-5 mt-10">
+      <section className="grid sm:grid-cols-2 gap-5 mt-10">
         <ArticleRight allArticles={articles} />
         <article className="grid grid-rows-3 justify-center gap-5">
           {articles.map(

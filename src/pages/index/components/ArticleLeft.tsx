@@ -14,7 +14,7 @@ export default function ArticleLeft({ article }: any) {
             <p key={index}>{t}</p>
           ))}
         </div>
-        <h3 className="text-xs font-semibold my-3 cursor-pointer">
+        <h3 className="text-xs font-semibold my-3 cursor-pointer text-justify">
           {article.title}
         </h3>
         <p className="text-[.7rem] text-gray-400 flex items-center gap-x-2 group-hover:text-purple-300 transition-all duration-700">
