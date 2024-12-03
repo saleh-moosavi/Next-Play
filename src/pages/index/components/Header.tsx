@@ -56,17 +56,17 @@ export default function Header() {
         ref={slideRef}
       >
         <img
-          className="rounded-3xl h-80 w-full object-cover"
+          className="rounded-3xl h-52 sm:h-72 md:h-80 w-full object-cover"
           src={slides[currentSlide].img}
         />
-        <div className="text-white absolute bottom-5 left-20 w-72 backdrop-blur-md px-5 py-1 rounded-3xl border-2 border-white/10">
-          <p className="text-[.65rem] text-orange-400 bg-orange-400/20 inline-block px-2 rounded-full">
+        <div className="text-white absolute top-[45%] sm:top-1/2 md:bottom-5 md:top-auto left-1/2 -translate-x-1/2 md:translate-x-0 md:left-20 w-72 backdrop-blur-md px-5 py-1 md:py-2 rounded-3xl border-2 border-white/10">
+          <p className="text-[.6rem] text-orange-400 bg-orange-400/20 inline-block px-2 rounded-full">
             مقاله جدید
           </p>
-          <h4 className="font-semibold text-lg my-2">
+          <h4 className="font-semibold text-sm md:text-lg my-2">
             {slides[currentSlide].title}
           </h4>
-          <p className="text-xs font-semibold text-gray-200 text-justify line-clamp-3">
+          <p className="text-[.6rem] md:text-xs font-semibold text-gray-200 text-justify line-clamp-3">
             {slides[currentSlide].desc}
           </p>
           <div className="flex justify-between items-center mt-5">
@@ -82,10 +82,10 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="mt-5 relative">
+      <div className="mt-32 col-span-3 md:col-span-1 md:mt-5 relative">
         <FaAngleRight
           onClick={() => prewSlide(slides[currentSlide].id)}
-          className="absolute top-1/2 -translate-y-1/2 bg-purple-500 -right-2 text-white rounded-full cursor-pointer hover:scale-125"
+          className="absolute top-1/2 sm:top-2/3 translate-y-1/2 md:-translate-y-1/2 bg-purple-500 -right-2 text-white rounded-full cursor-pointer hover:scale-125"
         />
         <div className="grid grid-cols-4 gap-2 *:rounded-md *:object-cover h-10 *:h-full *:cursor-pointer">
           {slides.map((slide) => (
@@ -99,7 +99,7 @@ export default function Header() {
         </div>
         <FaAngleLeft
           onClick={() => nextSlide(slides[currentSlide].id)}
-          className="absolute top-1/2 -translate-y-1/2 bg-purple-500 -left-2 text-white rounded-full cursor-pointer hover:scale-125"
+          className="absolute top-1/2 sm:top-2/3 translate-y-1/2 md:-translate-y-1/2 bg-purple-500 -left-2 text-white rounded-full cursor-pointer hover:scale-125"
         />
       </div>
     </div>
