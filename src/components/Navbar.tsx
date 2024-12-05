@@ -7,6 +7,8 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false);
+  const [searchbar, setSearchbar] = useState(true);
+
   const sidebarChange = () => {
     setSidebar(!sidebar);
   };
@@ -31,7 +33,17 @@ export default function Navbar() {
         <FaGamepad className="w-7 h-7 text-purple-500" />
       </div>
       <article className="flex gap-x-5 items-center">
-        <CiSearch />
+        <label className="flex gap-x-5 items-center relative">
+          <CiSearch
+            className={`${searchbar ? "" : "absolute right-2"} cursor-pointer`}
+            onClick={() => setSearchbar(!searchbar)}
+          />
+          <input
+            type="text"
+            className={`rounded-full bg-transparent border-[1px] text-xs pl-2 pr-7 py-1 outline-none transition-all duration-500
+              ${searchbar ? "w-0 hidden" : "w-28 md:w-52"}`}
+          />
+        </label>
         <IoMdMoon />
         <button className="bg-purple-500 px-5 py-1 rounded text-xs font-bold">
           ثبت نام
