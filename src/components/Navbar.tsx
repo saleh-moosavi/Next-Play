@@ -7,6 +7,9 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false);
+  const sidebarChange = () => {
+    setSidebar(!sidebar);
+  };
 
   return (
     <div className="text-white flex justify-between items-center p-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
@@ -23,7 +26,7 @@ export default function Navbar() {
       <div className="sm:hidden flex gap-x-5 *:cursor-pointer">
         <PiList
           className="size-6 hover:scale-110 transition-all duration-500"
-          onClick={() => setSidebar(true)}
+          onClick={sidebarChange}
         />
         <FaGamepad className="w-7 h-7 text-purple-500" />
       </div>
@@ -39,8 +42,9 @@ export default function Navbar() {
       <div
         className={`sm:hidden fixed top-0 bottom-0 right-0 z-50 bg-black/30 backdrop-blur-sm w-full h-full transition-all duration-500 flex
           ${sidebar ? "opacity-100 visible" : "opacity-0 invisible"}`}
+        onClick={sidebarChange}
       >
-        <Sidebar setSidebar={setSidebar} sidebar={sidebar} />
+        <Sidebar sidebarChange={sidebarChange} sidebar={sidebar} />
       </div>
     </div>
   );
