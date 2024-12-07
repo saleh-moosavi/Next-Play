@@ -1,11 +1,16 @@
 import { CiSearch } from "react-icons/ci";
 import { FaGamepad } from "react-icons/fa";
-import { IoMdMoon } from "react-icons/io";
+import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import { PiList } from "react-icons/pi";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
+import darkmodStore from "../stateManager/darkmodStore";
 
 export default function Navbar() {
+  // zustand store
+  const { isDarkMode, toggleDarkMode } = darkmodStore();
+
+  // states
   const [sidebar, setSidebar] = useState(false);
   const [searchbar, setSearchbar] = useState(true);
 
@@ -44,7 +49,9 @@ export default function Navbar() {
               ${searchbar ? "w-0 hidden" : "w-28 md:w-52"}`}
           />
         </label>
-        <IoMdMoon />
+        <div onClick={toggleDarkMode} className="cursor-pointer">
+          {isDarkMode ? <IoMdMoon /> : <IoMdSunny />}
+        </div>
         <button className="bg-purple-500 hover:bg-purple-600 px-5 py-1 rounded text-xs font-bold transition-all duration-500">
           ثبت نام
         </button>
