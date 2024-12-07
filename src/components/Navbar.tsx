@@ -3,7 +3,7 @@ import { FaGamepad } from "react-icons/fa";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import { PiList } from "react-icons/pi";
 import Sidebar from "./Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import darkmodStore from "../stateManager/darkmodStore";
 
 export default function Navbar() {
@@ -17,6 +17,12 @@ export default function Navbar() {
   const sidebarChange = () => {
     setSidebar(!sidebar);
   };
+
+  useEffect(() => {
+    isDarkMode
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  }, [isDarkMode]);
 
   return (
     <div className="text-white flex justify-between items-center p-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
