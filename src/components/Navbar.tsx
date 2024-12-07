@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <div className="text-white flex justify-between items-center p-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
-      <ul className="hidden sm:flex sm:gap-x-5 sm:items-center *:text-sm font-semibold *:text-gray-200">
+      <ul className="hidden sm:flex sm:gap-x-5 sm:items-center *:text-sm font-semibold *:text-gray-200 *:cursor-pointer">
         <li>
           <FaGamepad className="w-7 h-7 text-purple-500" />
         </li>
@@ -45,7 +45,7 @@ export default function Navbar() {
           />
         </label>
         <IoMdMoon />
-        <button className="bg-purple-500 px-5 py-1 rounded text-xs font-bold">
+        <button className="bg-purple-500 hover:bg-purple-600 px-5 py-1 rounded text-xs font-bold transition-all duration-500">
           ثبت نام
         </button>
       </article>

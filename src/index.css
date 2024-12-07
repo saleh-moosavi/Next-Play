@@ -29,3 +29,7 @@
 ::-webkit-scrollbar-track {
   background-color: rgba(180, 125, 232, 0.541);
 }
+
+* {
+  scroll-behavior: smooth;
+}
