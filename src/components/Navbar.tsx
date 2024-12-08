@@ -26,9 +26,9 @@ export default function Navbar() {
 
   return (
     <div className="text-white flex justify-between items-center p-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
-      <ul className="hidden sm:flex sm:gap-x-5 sm:items-center *:text-sm font-semibold *:text-gray-200 *:cursor-pointer">
+      <ul className="hidden sm:flex sm:gap-x-5 sm:items-center *:text-sm font-semibold *:text-gray-200 *:dark:text-gray-900 *:cursor-pointer">
         <li>
-          <FaGamepad className="w-7 h-7 text-purple-500" />
+          <FaGamepad className="w-7 h-7 text-purple-500 dark:text-purple-700" />
         </li>
         <li>خانه</li>
         <li>فروشگاه</li>
@@ -38,7 +38,7 @@ export default function Navbar() {
       </ul>
       <div className="sm:hidden flex gap-x-5 *:cursor-pointer">
         <PiList
-          className="size-6 hover:scale-110 transition-all duration-500"
+          className="size-6 hover:scale-110 transition-all duration-500 dark:text-gray-900"
           onClick={sidebarChange}
         />
         <FaGamepad className="w-7 h-7 text-purple-500" />
@@ -46,17 +46,23 @@ export default function Navbar() {
       <article className="flex gap-x-5 items-center">
         <label className="flex gap-x-5 items-center relative">
           <CiSearch
-            className={`${searchbar ? "" : "absolute right-2"} cursor-pointer`}
+            className={`${
+              searchbar ? "" : "absolute right-2"
+            } cursor-pointer text-gray-900`}
             onClick={() => setSearchbar(!searchbar)}
           />
           <input
             type="text"
-            className={`rounded-full bg-transparent border-[1px] text-xs pl-2 pr-7 py-1 outline-none transition-all duration-500
+            className={`rounded-full bg-transparent border-[1px] dark:text-gray-900 dark:border-gray-900 text-xs pl-2 pr-7 py-1 outline-none transition-all duration-500
               ${searchbar ? "w-0 hidden" : "w-28 md:w-52"}`}
           />
         </label>
         <div onClick={toggleDarkMode} className="cursor-pointer">
-          {isDarkMode ? <IoMdMoon /> : <IoMdSunny />}
+          {isDarkMode ? (
+            <IoMdSunny className="text-yellow-500" />
+          ) : (
+            <IoMdMoon />
+          )}
         </div>
         <button className="bg-purple-500 hover:bg-purple-600 px-5 py-1 rounded text-xs font-bold transition-all duration-500">
           ثبت نام

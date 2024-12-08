@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-slate-800 font-[vazir]" dir="rtl">
+    <div className="bg-slate-800 dark:bg-slate-100 font-[vazir]" dir="rtl">
       <div>
         <BrowserRouter>
           <Navbar />
