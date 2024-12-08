@@ -48,7 +48,7 @@ export default function Navbar() {
           <CiSearch
             className={`${
               searchbar ? "" : "absolute right-2"
-            } cursor-pointer text-gray-900`}
+            } cursor-pointer dark:text-gray-900`}
             onClick={() => setSearchbar(!searchbar)}
           />
           <input
