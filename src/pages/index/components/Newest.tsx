@@ -17,7 +17,9 @@ export default function Newest() {
   return (
     <div className="px-5 lg:px-0 my-10">
       <section className="flex justify-between items-center">
-        <h2 className="font-semibold text-white">جدیدترین بازی های فروشگاه</h2>
+        <h2 className="font-semibold text-white dark:text-gray-900">
+          جدیدترین بازی های فروشگاه
+        </h2>
         <div className="px-5 bg-gray-600 rounded-lg">
           <select
             value={filter}

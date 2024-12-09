@@ -59,14 +59,14 @@ export default function Header() {
           className="rounded-3xl h-52 sm:h-72 md:h-80 w-full object-cover"
           src={slides[currentSlide].img}
         />
-        <div className="text-white absolute top-[45%] sm:top-1/2 md:bottom-5 md:top-auto left-1/2 -translate-x-1/2 md:translate-x-0 md:left-20 w-72 backdrop-blur-md dark:bg-black/10 px-5 py-1 md:py-2 rounded-3xl border-2 border-white/10">
+        <div className="text-white absolute top-[45%] sm:top-1/2 md:bottom-5 md:top-auto left-1/2 -translate-x-1/2 md:translate-x-0 md:left-20 w-72 backdrop-blur-md dark:bg-black/30 px-5 py-1 md:py-2 rounded-3xl border-2 border-white/10">
           <p className="text-[.6rem] text-orange-400 bg-orange-400/20 inline-block px-2 rounded-full">
             مقاله جدید
           </p>
-          <h4 className="font-semibold dark:text-gray-900 text-sm md:text-lg my-2">
+          <h4 className="font-semibold text-sm md:text-lg my-2">
             {slides[currentSlide].title}
           </h4>
-          <p className="text-[.6rem] md:text-xs font-semibold text-gray-200 dark:text-gray-500 text-justify line-clamp-3">
+          <p className="text-[.6rem] md:text-xs font-semibold text-gray-200 text-justify line-clamp-3">
             {slides[currentSlide].desc}
           </p>
           <div className="flex justify-between items-center mt-5">

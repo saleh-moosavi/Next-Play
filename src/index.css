@@ -12,7 +12,7 @@
 }
 
 .active-slide {
-  @apply border-2 border-white/70;
+  @apply border-2 border-white/70 dark:border-black/50;
 }
 
 .show {
