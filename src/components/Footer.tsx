@@ -9,10 +9,10 @@ import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
-    <section className=" bg-gray-300/10">
+    <section className=" bg-gray-300/10 dark:bg-black/10">
       <footer className="grid grid-cols-12 gap-5 md:gap-0 p-5 lg:px-0 lg:max-w-5xl lg:mx-auto">
         {/* section 1 */}
-        <section className="md:col-span-4 col-span-6 text-white justify-self-center md:justify-self-start">
+        <section className="md:col-span-4 col-span-6 text-white dark:text-gray-900 justify-self-center md:justify-self-start">
           <h3 className="mb-5">داغ ترین مطالب</h3>
           <article className="flex gap-x-2 text-xs items-center cursor-pointer">
             <img
@@ -38,7 +38,7 @@ export default function Footer() {
         </section>
 
         {/* section 2 */}
-        <section className="md:col-span-3 col-span-6 text-white justify-self-center">
+        <section className="md:col-span-3 col-span-6 text-white dark:text-gray-900 justify-self-center">
           <h3 className="mb-5">پربازدیدترین صفحات</h3>
           <ul className="*:text-xs flex flex-col gap-y-2 *:cursor-pointer">
             <li>مقالات</li>
@@ -50,18 +50,18 @@ export default function Footer() {
         </section>
 
         {/* section 3 */}
-        <section className="md:col-span-5 col-span-12 text-white justify-self-center md:justify-self-center w-full max-w-72">
+        <section className="md:col-span-5 col-span-12 text-white dark:text-gray-900 justify-self-center md:justify-self-center w-full max-w-72">
           <h3 className="mb-5">عضویت در خبرنامه</h3>
           <label className="flex items-center gap-x-2 w-full h-7 relative">
             <input
               type="email"
               placeholder="ایمیل خود را وارد کنید"
-              className="w-full h-full rounded-md bg-black/20 text-white ps-10 pe-2 text-xs font-semibold outline-none focus:shadow-[0_0_5px_rgb(249_115_22)] hover:shadow-[0_0_10px_rgb(249_115_22)] transition-all duration-700"
+              className="w-full h-full rounded-md bg-black/20 text-white placeholder:dark:text-gray-600 dark:text-gray-900 ps-10 pe-2 text-xs font-semibold outline-none focus:shadow-[0_0_5px_rgb(249_115_22)] hover:shadow-[0_0_10px_rgb(249_115_22)] transition-all duration-700"
             />
-            <div className="bg-orange-500/80 p-1 rounded-md cursor-pointer">
+            <div className="bg-orange-500/80 dark:bg-orange-300 p-1 rounded-md cursor-pointer">
               <FaArrowLeft />
             </div>
-            <MdEmail className="text-orange-500 absolute right-1 top-1/2 -translate-y-1/2 text-2xl" />
+            <MdEmail className="text-orange-500 dark:text-orange-300 absolute right-1 top-1/2 -translate-y-1/2 text-2xl" />
           </label>
           <div className="mt-4">
             <img
