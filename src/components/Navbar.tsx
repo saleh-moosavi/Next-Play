@@ -5,6 +5,7 @@ import { PiList } from "react-icons/pi";
 import Sidebar from "./Sidebar";
 import { useEffect, useState } from "react";
 import darkmodStore from "../stateManager/darkmodStore";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   // zustand store
@@ -28,7 +29,9 @@ export default function Navbar() {
     <div className="text-white flex justify-between items-center p-5 lg:px-0 lg:max-w-5xl lg:mx-auto border-b border-gray-400/20">
       <ul className="hidden sm:flex sm:gap-x-5 sm:items-center *:text-sm font-semibold *:text-gray-200 *:dark:text-gray-900 *:cursor-pointer">
         <li>
-          <FaGamepad className="w-7 h-7 text-purple-500 dark:text-purple-700" />
+          <Link to={"/"}>
+            <FaGamepad className="w-7 h-7 text-purple-500 dark:text-purple-700" />
+          </Link>
         </li>
         <li>خانه</li>
         <li>فروشگاه</li>
@@ -64,9 +67,12 @@ export default function Navbar() {
             <IoMdMoon />
           )}
         </div>
-        <button className="bg-purple-500 hover:bg-purple-600 px-5 py-1 rounded text-xs font-bold transition-all duration-500">
+        <Link
+          to={"/register"}
+          className="bg-purple-500 hover:bg-purple-600 px-5 py-1 rounded text-xs font-bold transition-all duration-500"
+        >
           ثبت نام
-        </button>
+        </Link>
       </article>
 
       {/* sidebar */}
