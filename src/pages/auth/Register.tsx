@@ -3,7 +3,7 @@ import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Register() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
 
@@ -20,16 +20,16 @@ export default function Register() {
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="space-y-1">
-              <label htmlFor="username" className="text-sm text-gray-400">
+              <label htmlFor="email" className="text-sm text-gray-400">
                 ایمیل
               </label>
               <input
                 type="email"
-                id="username"
+                id="email"
                 placeholder="ایمیل خود را وارد کنید"
                 className="w-full text-xs px-4 py-3 bg-gray-900 border border-transparent focus:border-orange-600 rounded-md text-gray-100 focus:outline-none"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="space-y-1">
@@ -60,7 +60,7 @@ export default function Register() {
             </div>
             <button
               type="submit"
-              className="w-full py-3 bg-gradient-to-r from-purple-800 to-purple-600 text-gray-900 rounded-md font-semibold hover:bg-indigo-600 focus:outline-none"
+              className="w-full py-3 bg-gradient-to-r from-purple-800 to-purple-600 hover:shadow-[0_0_5px_#FFF] text-gray-200 rounded-md font-semibold focus:outline-none transition-all duration-300"
             >
               ثبت نام
             </button>

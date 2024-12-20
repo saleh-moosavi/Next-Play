@@ -46,14 +46,17 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div className="mt-2 block">
-                <a href="#" className="text-xs text-gray-400 hover:underline">
+                <Link
+                  to={"/reset-password"}
+                  className="text-xs text-gray-400 hover:underline"
+                >
                   رمز عبور خود را فراموش کرده اید ؟
-                </a>
+                </Link>
               </div>
             </div>
             <button
               type="submit"
-              className="w-full py-3 bg-gradient-to-r from-purple-800 to-purple-600 text-gray-900 rounded-md font-semibold hover:bg-indigo-600 focus:outline-none"
+              className="w-full py-3 bg-gradient-to-r from-purple-800 to-purple-600 hover:shadow-[0_0_5px_#FFF] text-gray-200 rounded-md font-semibold focus:outline-none transition-all duration-300"
             >
               ورود
             </button>
