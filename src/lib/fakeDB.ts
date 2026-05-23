@@ -1,0 +1,223 @@
+export const articles = [
+  {
+    id: 0,
+    type: ["اخبار", "ورزشی"],
+    title: "بازی NBA 2K 2023 رکورد پرفروش ترین بازی ورزشی را شکست",
+    views: 200,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrm13OebqugZ5IXFd47DeofmfM_yXINTkRqQ&s",
+  },
+  {
+    id: 1,
+    type: ["بازی های جدید", "اکشن"],
+    title: "نسخه جدید اساسین کرید با عنوان میراژ منتشر شد",
+    views: 542,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpxLk7tWRcS9xE08AS1CcHx7rvCtaDKOxMg&s",
+  },
+  {
+    id: 2,
+    type: ["موسیقی"],
+    title: "موسیقی بازی The Last Of Us رکورد دار بیشترین دانلود",
+    views: 34,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPLdSZKkaJbBqfoILt8b3s_R4_RpT0Plui5w&s",
+  },
+  {
+    id: 3,
+    type: ["فکری", "پازل"],
+    title: "بازی Hello Neighbor منتشر شد",
+    desc: "سلام همسایه از خاص ترین ، زیباترین و محبوب ترین بازیهای ماجراجوییترسناک با ساخت فوق العاده از tinyBuild برای اندروید است که تا دقایقی پیش",
+    img: "https://bloody-disgusting.com/wp-content/uploads/2021/03/helloneighbor2.jpg",
+  },
+  {
+    id: 4,
+    type: ["اول شخص", "تیراندازی"],
+    title: "دانلود بازی War Thunder برای ایکس باکس",
+    desc: "War Thunder جامع‌ترین بازی نظامی MMO است که از اوایل قرن بیستم تا پیشرفته‌ترین واحدهای رزمی مدرن به هوانوردی، وسایل نقلیه زرهی و کشتی‌های دریایی اختصاص داده شده است.",
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/War.Thunder.Grid_-qxadq7gaw4jm9vvq9kuuaco11lbmv7w0c18ts4kch8.webp",
+  },
+  {
+    id: 5,
+    type: ["فکری", "پازل"],
+    title: "دانلود بازی Battlefield™ 1 برای کامپیوتر",
+    desc: "Battlefield™ 1 شما را به جنگ بزرگ، WW1 بازمی‌گرداند، جایی که فناوری جدید و درگیری‌های جهانی چهره جنگ را برای همیشه تغییر داد.",
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Battlefield-1.Grid_-qx8hb39hx4q2rhp14vtcfwsa0lpkghhkcqnp54nhgs.webp",
+  },
+];
+
+export const heroSlide = [
+  {
+    id: 0,
+    img: "https://www.creocommunity.pt/wp-content/uploads/2024/02/Modern-Warfare-3-e-Warzone-Season-2-chegam-em-7.jpg",
+    title: "Call of Duty Warzone",
+    desc: "مانند دیگر بازیهای بتل رویال سوار یک هواپیما خواهید شد و روی نقشه فرود خواهید آمد . وجه تفاوت این بازی نسبت به بقیه در تعداد بازیکنان آن است",
+    comments: "20",
+  },
+  {
+    id: 1,
+    img: "https://techcrunch.com/wp-content/uploads/2018/07/fortnite03.jpg",
+    title: "Fortnite",
+    desc: "بازی فورتنایت در ابتدا تنها یک بازی سوم شخص ماجراجویانه بود که کاربران باید در آن با جستجو در محیط بازی و جمع‌آوری آیتم‌های مختلف در بازی پیشرفت می‌کردند و به نبرد با زامبی‌ها می‌پرداختند.",
+    comments: "5",
+  },
+  {
+    id: 2,
+    img: "https://www.digitaltrends.com/wp-content/uploads/2024/03/Marvel-Rivals-2.jpg?resize=1000%2C600&p=1",
+    title: "Marvel Rivals 2",
+    desc: "یک بازی اکشن و تیراندازی PVP مبتنی بر تیم سوپر قهرمان است! یک تیم تمام ستاره مارول را جمع آوری کنید، استراتژی های بی شماری را با ترکیب قدرت ها برای ایجاد مهارت های منحصر به فرد تیم آپ طراحی کنید و در میدان های نبرد تخریب پذیر و همیشه در حال تغییر در سراسر جهان مارول که به طور مداوم در حال تکامل است بجنگید",
+    comments: "9",
+  },
+  {
+    id: 3,
+    img: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/forza-5/0/0f/Forza_motorsport_5.jpg",
+    title: "Forza Horizen 5",
+    desc: "نقشه این بازی، یک منطقه گسترده و جذاب از قاره آمریکا را به تصویر می‌کشد که مناطقی مانند کوه‌های آتشفشانی، جنگل‌ها و سواحل دریایی، معابد باستانی مایها و شهرهای مختلفی از این ناحیه جغرافیایی را با دقت بسیار بالا به تصویر می‌کشد. پلیر در فضای بازی می‌تواند به شکلی آزادانه با اتومبیل‌هایی جذاب و چشم‌نواز به گشت و گذار پرداخته و حالت داستانی بازی را کامل کند.",
+    comments: "14",
+  },
+];
+
+export const newest = [
+  {
+    id: 0,
+    img: "https://www.creocommunity.pt/wp-content/uploads/2024/02/Modern-Warfare-3-e-Warzone-Season-2-chegam-em-7.jpg",
+    title: "بازی Call of Duty Warzone برای کامپیوتر",
+    price: 150,
+    rate: true,
+    download: true,
+  },
+  {
+    id: 1,
+    img: "https://techcrunch.com/wp-content/uploads/2018/07/fortnite03.jpg",
+    title: "بازی Fortnite برای کنسول PS4",
+    price: 220,
+    sale: true,
+    download: true,
+  },
+  {
+    id: 2,
+    img: "https://www.digitaltrends.com/wp-content/uploads/2024/03/Marvel-Rivals-2.jpg?resize=1000%2C600&p=1",
+    title: "بازی Marvel Rivals 2 برای ایکس باکس",
+    price: 500,
+    sale: true,
+  },
+  {
+    id: 3,
+    img: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/forza-5/0/0f/Forza_motorsport_5.jpg",
+    title: "بازی Forza Horizen 5 برای کامپیوتر",
+    price: 410,
+    rate: true,
+    download: true,
+  },
+  {
+    id: 4,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Microsoft.Flight.Simulator-2024.Grid_-qxm2sa834ut5adxfqqp0q9i2k53a1qejpjsoolj770.webp",
+    title: "دانلود بازی Microsoft Flight Simulator 2024 برای کامپیوتر",
+    price: 150,
+    sale: true,
+  },
+  {
+    id: 5,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Ara-History.Untold.Grid_-quo0c9qpnoxs5k2t15yfgtu9k3ps2fss5ur4uwsnxo.webp",
+    title: "دانلود بازی Ara: History Untold برای کامپیوتر",
+    price: 220,
+    sale: true,
+  },
+  {
+    id: 6,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/A.Quiet_.Place-The.Road_.Ahead_.Grid_-qvyvo4cdmuotxq8vm11d4bvlcd0e7go8zzwumva8fg.webp",
+    title: "دانلود بازی A Quiet Place: The Road Ahead برای کامپیوتر",
+    price: 500,
+    rate: true,
+    download: true,
+  },
+  {
+    id: 7,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Empyrion-Galactic.Survival.Grid_-qb8gxd2zmtwl6bdt92k16wxd9i1rht3n63559pyp0s.webp",
+    title: "دانلود بازی Jujutsu Kaisen Cursed Clash برای کامپیوتر",
+    price: 410,
+    view: true,
+  },
+  {
+    id: 8,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Bodycam.Grid_-qpscnoblpjp4p869aku4ro23pkdon9rzu4ihe9kg8c.webp",
+    title: "دانلود بازی Bodycam برای کامپیوتر",
+    price: 150,
+    view: true,
+  },
+  {
+    id: 9,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Sea.of_.Stars_.Grid_-qc5nrotoqn9wdgoasr06owdfujwrxdzsr8gbd66ywc.webp",
+    title: "دانلود بازی Sea of Stars برای کامپیوتر",
+    price: 220,
+    view: true,
+  },
+  {
+    id: 10,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/No.Mans_.Sky_.Slider-pxs8hq01pz45kueai0733x83vt2lza2eynp6bkre3w.webp",
+    title: "دانلود بازی No Man’s Sky برای کامپیوتر",
+    price: 500,
+    rate: true,
+  },
+  {
+    id: 11,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Horizon.Zero_.Dawn_.Remastered.Grid_-qwdo3t7n7pta8c3trd9qrfh6o1wi172sb9b55f5ovg.webp",
+    title: "دانلود بازی Horizon Zero Dawn™ Remastered برای کامپیوتر",
+    price: 410,
+    view: true,
+  },
+];
+
+export const reviews = [
+  {
+    id: 1,
+    title: "Alan Wake 2",
+    img: "https://i.redd.it/yumu0vxji7w71.jpg",
+  },
+  {
+    id: 2,
+    title: "The Last of Us Part 1",
+    img: "https://www.numerama.com/wp-content/uploads/2023/01/thelastofus-parti.jpg",
+  },
+  {
+    id: 3,
+    title: "Metal Gear Solid Delta: Snake Eater",
+    img: "https://www.theloadout.com/wp-content/sites/theloadout/2023/05/Metal-Gear-Solid-Snake-Eater-Release-Date.jpg",
+  },
+];
+
+export const trailers = [
+  {
+    id: 1,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Enotria-The.Last_.Song_.Grid_-quaa7z10lkxxcpnpt0ivv98kc9hjmbnblnjmzoe0n8.webp",
+    duration: "02:45",
+    title: "تریلر زیبای بازی Enotria: The Last Song",
+    view: "43",
+    published_at: "ده روز پیش",
+    publisher: "نسیم",
+  },
+  {
+    id: 2,
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFUhqaH_y-P7yp6QFby87RfBfR0NI-SkisIA&s",
+    duration: "05:24",
+    title: "تریلر بازی Marvel`s Spider-Man 2 منتشر شد",
+    view: "32",
+    published_at: "یک ماه پیش",
+    publisher: "محمد",
+  },
+  {
+    id: 3,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/Lords.of_.the_.Fallen.Grid_-qdxngu9757ck06qd1zzcambvl2hdcn0erx2gmh3a2s.webp",
+    duration: "01:58",
+    title: "تریلر جذاب بازی Lords of the Fallen منتشر شد",
+    view: "13",
+    published_at: "دو ماه پیش",
+    publisher: "کیانوش",
+  },
+  {
+    id: 4,
+    img: "https://gamebato.ir/wp-content/uploads/elementor/thumbs/The.Witcher.3.Wil_.Hunt_.Complete.Edition.Profile.Grid_-pz6y2m5880wlpe7w95tg73i2vko8krm2ikp2d4g0jo.jpg",
+    duration: "03:21",
+    title: "نخستین تریلر بازی The Witcher 3: Wild Hunt",
+    view: "51",
+    published_at: "امروز",
+    publisher: "نیوشا",
+  },
+];
