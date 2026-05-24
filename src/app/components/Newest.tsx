@@ -2,8 +2,9 @@
 import { useState } from "react";
 import NewestItem from "./NewestItem";
 import { newest } from "@/lib/fakeDB";
+import { Game } from "@/types/mainPageTypes";
 
-export default function Newest() {
+export default function Newest({ games }: { games: Game[] }) {
   const [data, setData] = useState(newest);
   const [filter, setFilter] = useState("sale");
 

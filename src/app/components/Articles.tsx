@@ -1,8 +1,15 @@
 import { articles } from "@/lib/fakeDB";
 import ArticleLeft from "./ArticleLeft";
 import ArticleRight from "./ArticleRight";
+import { ComingSoon, MobileGame } from "@/types/mainPageTypes";
 
-export default function Articles() {
+export default function Articles({
+  comingSoon,
+  androidGames,
+}: {
+  comingSoon: ComingSoon[];
+  androidGames: MobileGame[];
+}) {
   return (
     <div className="pb-10 px-5 pt-5 lg:px-0">
       <h3 className="border-b-2 w-fit mx-auto border-white dark:border-gray-900 text-white dark:text-gray-900 pb-2 my-5">
