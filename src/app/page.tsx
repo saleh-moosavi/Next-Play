@@ -1,8 +1,8 @@
-import Header from "./components/Header";
 import Newest from "./components/Newest";
 import Reviews from "./components/Reviews";
 import Trailers from "./components/Trailers";
 import Articles from "./components/Articles";
+import HeroSlider from "./components/HeroSlider";
 import { ScrapedData } from "@/types/mainPageTypes";
 import BackToTopBtn from "@/_components/BackToTopBtn";
 
@@ -16,9 +16,9 @@ export default async function Home() {
     const data: ScrapedData = result.data;
 
     return (
-      <div className="lg:max-w-5xl lg:mx-auto">
+      <div className="lg:max-w-5xl lg:mx-auto *:my-5">
         <BackToTopBtn />
-        <Header slides={data?.slides} />
+        <HeroSlider slides={data?.slides} />
         <Newest games={data?.games} />
         <Articles
           comingSoon={data?.comingSoon}
