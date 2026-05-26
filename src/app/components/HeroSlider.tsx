@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import "keen-slider/keen-slider.min.css";
 import { Slide } from "@/types/mainPageTypes";
 import { useHeroSlider } from "../hooks/useHeroSlider";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";

@@ -1,4 +1,5 @@
 import "./globals.css";
+import "keen-slider/keen-slider.min.css";
 import type { Metadata } from "next";
 import Navbar from "@/_components/Navbar";
 import Footer from "@/_components/Footer";

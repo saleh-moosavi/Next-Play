@@ -1,7 +1,7 @@
 import Newest from "./components/Newest";
 import Reviews from "./components/Reviews";
 import Trailers from "./components/Trailers";
-import Articles from "./components/Articles";
+import NewsList from "./components/NewsList";
 import HeroSlider from "./components/HeroSlider";
 import { ScrapedData } from "@/types/mainPageTypes";
 import BackToTopBtn from "@/_components/BackToTopBtn";
@@ -20,10 +20,7 @@ export default async function Home() {
         <BackToTopBtn />
         <HeroSlider slides={data?.slides} />
         <Newest games={data?.games} />
-        <Articles
-          comingSoon={data?.comingSoon}
-          androidGames={data?.mobileGames}
-        />
+        <NewsList comingSoon={data?.comingSoon} news={data?.news} />
         <Reviews news={data?.news} />
         <Trailers videos={data?.videos} />
       </div>
