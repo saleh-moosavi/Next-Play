@@ -19,7 +19,7 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
+    <div className="w-full max-w-6xl mx-auto px-5 lg:px-0">
       <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
         <div ref={sliderRef} className="keen-slider">
           {slides.map((slide, idx) => (
