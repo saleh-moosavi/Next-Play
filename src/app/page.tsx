@@ -1,5 +1,5 @@
 import Newest from "./components/Newest";
-import Reviews from "./components/Reviews";
+import Videos from "./components/Videos";
 import Trailers from "./components/Trailers";
 import NewsList from "./components/NewsList";
 import HeroSlider from "./components/HeroSlider";
@@ -21,7 +21,7 @@ export default async function Home() {
         <HeroSlider slides={data?.slides} />
         <Newest games={data?.games} />
         <NewsList news={data?.news} iranGamesNews={data?.iranGameNews} />
-        <Reviews news={data?.news} />
+        <Videos videos={data.videos} />
         <Trailers videos={data?.videos} />
       </div>
     );
