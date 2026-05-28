@@ -52,6 +52,13 @@ export interface MobileGame {
   date: string;
 }
 
+export interface IranGameNews {
+  title: string;
+  link: string;
+  date: string;
+  imageUrl: string;
+}
+
 export interface ScrapedData {
   slides: Slide[];
   videos: Video[];
@@ -59,5 +66,6 @@ export interface ScrapedData {
   news: News[];
   comingSoon: ComingSoon[];
   mobileGames: MobileGame[];
+  iranGameNews: IranGameNews[];
   scrapedAt: string;
 }

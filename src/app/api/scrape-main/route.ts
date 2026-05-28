@@ -3,6 +3,7 @@ import {
   Game,
   MobileGame,
   News,
+  IranGameNews,
   ScrapedData,
   Slide,
   Video,
@@ -214,6 +215,29 @@ export async function GET() {
       });
     });
 
+    const iranGameNews: IranGameNews[] = [];
+    $(".sidebar-box.posts ul li").each((_, element) => {
+      const $li = $(element);
+      const $link = $li.find("a");
+
+      const link = $link.attr("href") || "";
+
+      const title = $link.clone().children().remove().end().text().trim();
+
+      const date = $link.find("span").text().trim();
+
+      const imageUrl = $link.find("img").attr("src") || "";
+
+      if (title && link) {
+        iranGameNews.push({
+          title,
+          link,
+          date,
+          imageUrl,
+        });
+      }
+    });
+
     const scrapedData: ScrapedData = {
       slides,
       videos,
@@ -221,6 +245,7 @@ export async function GET() {
       news,
       comingSoon,
       mobileGames,
+      iranGameNews,
       scrapedAt: new Date().toISOString(),
     };
 

@@ -20,7 +20,7 @@ export default async function Home() {
         <BackToTopBtn />
         <HeroSlider slides={data?.slides} />
         <Newest games={data?.games} />
-        <NewsList comingSoon={data?.comingSoon} news={data?.news} />
+        <NewsList news={data?.news} iranGamesNews={data?.iranGameNews} />
         <Reviews news={data?.news} />
         <Trailers videos={data?.videos} />
       </div>

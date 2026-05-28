@@ -6,7 +6,7 @@ import { News } from "@/types/mainPageTypes";
 import { useGameNewsSlider } from "../hooks/useGameNewsSlider";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 
-export default function GameNews({ news }: { news: News[] }) {
+export default function NewsRight({ news }: { news: News[] }) {
   const { sliderRef, loaded, currentSlide, sliderInstance } =
     useGameNewsSlider();
 
