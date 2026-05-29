@@ -1,10 +1,12 @@
 import Newest from "./components/Newest";
 import Videos from "./components/Videos";
-import Trailers from "./components/Trailers";
 import NewsList from "./components/NewsList";
 import HeroSlider from "./components/HeroSlider";
+import MobileGames from "./components/MobileGames";
 import { ScrapedData } from "@/types/mainPageTypes";
 import BackToTopBtn from "@/_components/BackToTopBtn";
+
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const res = await fetch(
@@ -22,7 +24,7 @@ export default async function Home() {
         <Newest games={data?.games} />
         <NewsList news={data?.news} iranGamesNews={data?.iranGameNews} />
         <Videos videos={data.videos} />
-        <Trailers videos={data?.videos} />
+        <MobileGames mobileGames={data?.mobileGames} />
       </div>
     );
   }
