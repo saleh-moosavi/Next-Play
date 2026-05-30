@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import SectionTitle from "./SectionTitle";
 import Button from "@/_components/Button";
 import { MobileGame } from "@/types/mainPageTypes";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
@@ -11,9 +12,7 @@ export default function MobileGames({
 }) {
   return (
     <div className="pb-10 px-5 pt-5 lg:px-0 text-center">
-      <h3 className="border-b-2 w-fit mx-auto border-white dark:border-gray-900 text-white dark:text-gray-900 pb-2 my-5">
-        بازی های اندروید
-      </h3>
+      <SectionTitle title="بازی های اندروید" />
       <section className="w-full flex flex-col items-center gap-5 my-10">
         <article className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5 justify-items-center items-center">
           {mobileGames.map((game: MobileGame, index: number) => (

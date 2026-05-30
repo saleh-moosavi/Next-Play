@@ -1,14 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import SectionTitle from "./SectionTitle";
 import Button from "@/_components/Button";
 import { Video } from "@/types/mainPageTypes";
 
 export default function Videos({ videos }: { videos: Video[] }) {
   return (
     <div className="pb-10 px-5 pt-5 lg:px-0 text-center">
-      <h3 className="border-b-2 w-fit mx-auto border-white dark:border-gray-900 text-white dark:text-gray-900 pb-2 my-5">
-        راهنمای آموزشی
-      </h3>
+      <SectionTitle title="راهنمای آموزشی" />
       <section className="grid grid-cols-1 md:grid-cols-12 gap-5 my-10">
         {videos.map((video: Video, index: number) => {
           let spanClass = "";

@@ -27,7 +27,7 @@ export default function Navbar() {
   }, [isDarkMode]);
 
   return (
-    <div className="text-white flex justify-between items-center p-5 lg:px-0 lg:max-w-5xl lg:mx-auto border-b border-gray-400/20">
+    <div className="text-white flex justify-between items-center p-5 lg:px-0 lg:max-w-5xl lg:mx-auto border-b border-gray-400/20 sticky top-0 z-50 backdrop-blur-2xl">
       <ul className="hidden sm:flex sm:gap-x-5 sm:items-center *:text-sm font-semibold *:text-gray-200 *:dark:text-gray-900 *:cursor-pointer">
         <li>
           <Link href={"/"}>
