@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import AuthWrapper from "../_components/AuthWrapper";
 
 export default function ResetPassword() {
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     console.log("Form submitted");
   };
@@ -33,7 +33,7 @@ export default function ResetPassword() {
         </div>
         <button
           type="submit"
-          className="w-full py-3 bg-gradient-to-r from-purple-800 to-purple-600 hover:shadow-[0_0_5px_#FFF] text-gray-200 rounded-md font-semibold focus:outline-none transition-all duration-300"
+          className="w-full py-3 bg-linear-to-r from-purple-800 to-purple-600 hover:shadow-[0_0_5px_#FFF] text-gray-200 rounded-md font-semibold focus:outline-none transition-all duration-300"
         >
           تایید
         </button>
