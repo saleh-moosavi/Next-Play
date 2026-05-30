@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaUser } from "react-icons/fa";
+import Button from "@/_components/Button";
 import { Game } from "@/types/mainPageTypes";
 
 export default function NewestItem({ game }: { game: Game }) {
@@ -62,11 +63,13 @@ export default function NewestItem({ game }: { game: Game }) {
       {game.link && (
         <Link
           href={game.link}
-          className="mt-auto justify-self-end text-xs font-semibold bg-orange-600/60 text-orange-300 dark:bg-orange-600/70 dark:text-orange-200 hover:bg-orange-600/80 py-2 flex items-center gap-x-2 justify-center transition-colors"
           target="_blank"
+          className="mt-auto"
           rel="noopener noreferrer"
         >
-          مشاهده جزئیات
+          <Button color="orange" width="full">
+            مشاهده جزئیات
+          </Button>
         </Link>
       )}
     </div>

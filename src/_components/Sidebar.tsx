@@ -1,6 +1,12 @@
 import { IoMdClose } from "react-icons/io";
 
-export default function Sidebar({ sidebarChange, sidebar }: any) {
+export default function Sidebar({
+  sidebarChange,
+  sidebar,
+}: {
+  sidebarChange: () => void;
+  sidebar: boolean;
+}) {
   return (
     <ul
       className={`flex flex-col gap-5 p-5 items-start rounded-2xl m-auto w-1/2 h-1/2 bg-purple-500/80 *:text-sm font-semibold transition-all duration-300 hover:*:text-orange-400 *:text-white *:dark:text-gray-200 *:cursor-pointer *:transition-all *:duration-500 

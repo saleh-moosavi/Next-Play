@@ -14,7 +14,7 @@ export default function MobileGames({
       <h3 className="border-b-2 w-fit mx-auto border-white dark:border-gray-900 text-white dark:text-gray-900 pb-2 my-5">
         بازی های اندروید
       </h3>
-      <section className="w-full flex flex-col items-center gap-5">
+      <section className="w-full flex flex-col items-center gap-5 my-10">
         <article className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5 justify-items-center items-center">
           {mobileGames.map((game: MobileGame, index: number) => (
             <div
@@ -80,7 +80,7 @@ export default function MobileGames({
           ))}
         </article>
       </section>
-      <Button />
+      <Button>مشاهده همه</Button>
     </div>
   );
 }

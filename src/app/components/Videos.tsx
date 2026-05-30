@@ -9,7 +9,7 @@ export default function Videos({ videos }: { videos: Video[] }) {
       <h3 className="border-b-2 w-fit mx-auto border-white dark:border-gray-900 text-white dark:text-gray-900 pb-2 my-5">
         راهنمای آموزشی
       </h3>
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-5 mt-10">
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-5 my-10">
         {videos.map((video: Video, index: number) => {
           let spanClass = "";
           if (index >= 0 && index <= 2) {
@@ -45,7 +45,7 @@ export default function Videos({ videos }: { videos: Video[] }) {
           );
         })}
       </section>
-      <Button />
+      <Button>مشاهده همه</Button>
     </div>
   );
 }

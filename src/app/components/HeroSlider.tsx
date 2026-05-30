@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Button from "@/_components/Button";
 import { Slide } from "@/types/mainPageTypes";
 import { useHeroSlider } from "../hooks/useHeroSlider";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
@@ -47,9 +48,10 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
                     href={slide.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base transition-all hover:scale-105"
                   >
-                    مشاهده جزئیات
+                    <Button color="purple" rounded="lg">
+                      مشاهده جزئیات
+                    </Button>
                   </a>
                 </div>
               </div>
