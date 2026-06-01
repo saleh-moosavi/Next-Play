@@ -240,39 +240,26 @@ export async function GET(request: NextRequest) {
       }
     });
 
-    let totalPages = 1;
+    const pagination = {
+      pageNumbers: 0,
+      lastPage: 0,
+    };
 
     const lastPageLink = $(".wp-pagenavi .last").attr("href");
     if (lastPageLink) {
       const match = lastPageLink.match(/\/page\/(\d+)\//);
       if (match) {
-        totalPages = parseInt(match[1]);
+        pagination.lastPage = parseInt(match[1]);
       }
     }
 
-    if (totalPages === 1) {
-      const pageNumbers = $(".wp-pagenavi .page, .wp-pagenavi .current")
-        .map((_, el) => parseInt($(el).text()))
-        .get()
-        .filter((n) => !isNaN(n));
+    const pageNumbers = $(".wp-pagenavi .page, .wp-pagenavi .current")
+      .map((_, el) => parseInt($(el).text()))
+      .get()
+      .filter((n) => !isNaN(n));
 
-      if (pageNumbers.length > 0) {
-        totalPages = Math.max(...pageNumbers);
-      }
-    }
-
-    if (totalPages === 1 && $(".wp-pagenavi .nextpostslink").length === 0) {
-      totalPages = page;
-    }
-
-    if (totalPages === 1) {
-      const lastLink = $(".wp-pagenavi a[class*='last']").attr("href");
-      if (lastLink) {
-        const pageMatch = lastLink.match(/\/(\d+)\/?$/);
-        if (pageMatch) {
-          totalPages = parseInt(pageMatch[1]);
-        }
-      }
+    if (pageNumbers.length > 0) {
+      pagination.pageNumbers = Math.max(...pageNumbers);
     }
 
     const scrapedData: ScrapedData = {
@@ -289,7 +276,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       data: scrapedData,
-      totalPages,
+      pagination,
     });
   } catch (error: unknown) {
     console.error("Scraping error:", error);

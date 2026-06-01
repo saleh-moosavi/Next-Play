@@ -2,31 +2,38 @@ import Link from "next/link";
 
 interface PaginationProps {
   currentPage: number;
-  totalPages: number;
+  pagination: {
+    pageNumbers: number;
+    lastPage: number;
+  };
 }
 
 export default function Pagination({
   currentPage,
-  totalPages,
+  pagination,
 }: PaginationProps) {
+  const totalPages =
+    pagination.lastPage > 0 ? pagination.lastPage : pagination.pageNumbers;
+
   if (totalPages <= 1) {
     return null;
   }
 
-  const generatePagination = () => {
+  const getPageNumbers = () => {
     const pages: (number | string)[] = [];
+
     pages.push(1);
 
     let startPage = Math.max(2, currentPage - 2);
     let endPage = Math.min(totalPages - 1, currentPage + 2);
 
-    if (currentPage <= 4) {
+    if (currentPage <= 3) {
       startPage = 2;
-      endPage = Math.min(totalPages - 1, 5);
+      endPage = Math.min(totalPages - 1, 4);
     }
 
-    if (currentPage >= totalPages - 3) {
-      startPage = Math.max(2, totalPages - 4);
+    if (currentPage >= totalPages - 2) {
+      startPage = Math.max(2, totalPages - 3);
       endPage = totalPages - 1;
     }
 
@@ -51,7 +58,7 @@ export default function Pagination({
     return pages;
   };
 
-  const pages = generatePagination();
+  const pages = getPageNumbers();
 
   return (
     <div className="flex justify-center items-center gap-2 mt-8 flex-wrap">

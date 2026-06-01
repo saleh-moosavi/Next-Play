@@ -9,13 +9,16 @@ import { Game } from "@/types/mainPageTypes";
 interface NewestProps {
   games: Game[];
   currentPage: number;
-  totalPages: number;
+  pagination: {
+    pageNumbers: number;
+    lastPage: number;
+  };
 }
 
 export default function Newest({
   games,
   currentPage,
-  totalPages,
+  pagination,
 }: NewestProps) {
   return (
     <div className="px-5 lg:px-0">
@@ -94,7 +97,7 @@ export default function Newest({
           </div>
         ))}
       </section>
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      <Pagination currentPage={currentPage} pagination={pagination} />
     </div>
   );
 }

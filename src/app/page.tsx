@@ -32,7 +32,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <Newest
           games={data?.games}
           currentPage={page}
-          totalPages={result.totalPages}
+          pagination={result.pagination}
         />
         <>
           <NewsList news={data?.news} iranGamesNews={data?.iranGameNews} />

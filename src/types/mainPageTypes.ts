@@ -73,5 +73,8 @@ export interface ScrapedData {
 export interface PaginatedResponse {
   success: boolean;
   data: ScrapedData;
-  totalPages: number;
+  pagination: {
+    pageNumbers: number;
+    lastPage: number;
+  };
 }
