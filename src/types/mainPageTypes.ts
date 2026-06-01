@@ -69,3 +69,9 @@ export interface ScrapedData {
   iranGameNews: IranGameNews[];
   scrapedAt: string;
 }
+
+export interface PaginatedResponse {
+  success: boolean;
+  data: ScrapedData;
+  totalPages: number;
+}

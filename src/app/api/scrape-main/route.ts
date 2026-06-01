@@ -9,10 +9,12 @@ import {
   Video,
 } from "@/types/mainPageTypes";
 import * as cheerio from "cheerio";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    const searchParams = request.nextUrl.searchParams;
+    const page = parseInt(searchParams.get("page") || "1");
     const targetUrl = process.env.SCRAPE_TARGET;
     if (!targetUrl) {
       return NextResponse.json(
@@ -24,10 +26,10 @@ export async function GET() {
       );
     }
 
-    const response = await fetch(targetUrl, {
-      next: {
-        revalidate: 60 * 60,
-      },
+    const baseUrl = targetUrl.replace(/\/$/, "");
+    const pageUrl = page === 1 ? baseUrl : `${baseUrl}/page/${page}/`;
+
+    const response = await fetch(pageUrl, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
@@ -238,6 +240,41 @@ export async function GET() {
       }
     });
 
+    let totalPages = 1;
+
+    const lastPageLink = $(".wp-pagenavi .last").attr("href");
+    if (lastPageLink) {
+      const match = lastPageLink.match(/\/page\/(\d+)\//);
+      if (match) {
+        totalPages = parseInt(match[1]);
+      }
+    }
+
+    if (totalPages === 1) {
+      const pageNumbers = $(".wp-pagenavi .page, .wp-pagenavi .current")
+        .map((_, el) => parseInt($(el).text()))
+        .get()
+        .filter((n) => !isNaN(n));
+
+      if (pageNumbers.length > 0) {
+        totalPages = Math.max(...pageNumbers);
+      }
+    }
+
+    if (totalPages === 1 && $(".wp-pagenavi .nextpostslink").length === 0) {
+      totalPages = page;
+    }
+
+    if (totalPages === 1) {
+      const lastLink = $(".wp-pagenavi a[class*='last']").attr("href");
+      if (lastLink) {
+        const pageMatch = lastLink.match(/\/(\d+)\/?$/);
+        if (pageMatch) {
+          totalPages = parseInt(pageMatch[1]);
+        }
+      }
+    }
+
     const scrapedData: ScrapedData = {
       slides,
       videos,
@@ -252,6 +289,7 @@ export async function GET() {
     return NextResponse.json({
       success: true,
       data: scrapedData,
+      totalPages,
     });
   } catch (error: unknown) {
     console.error("Scraping error:", error);

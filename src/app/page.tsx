@@ -8,9 +8,17 @@ import BackToTopBtn from "@/_components/BackToTopBtn";
 
 export const dynamic = "force-dynamic";
 
-export default async function Home() {
+interface HomeProps {
+  searchParams: Promise<{ page?: string }> | { page?: string };
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const resolvedParams = await searchParams;
+  const page = resolvedParams?.page ? parseInt(resolvedParams.page) : 1;
+
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/scrape-main`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/scrape-main?page=${page}`,
+    { cache: "no-store" },
   );
   const result = await res.json();
 
@@ -21,10 +29,16 @@ export default async function Home() {
       <div className="lg:max-w-5xl lg:mx-auto *:my-5">
         <BackToTopBtn />
         <HeroSlider slides={data?.slides} />
-        <Newest games={data?.games} />
-        <NewsList news={data?.news} iranGamesNews={data?.iranGameNews} />
-        <Videos videos={data.videos} />
-        <MobileGames mobileGames={data?.mobileGames} />
+        <Newest
+          games={data?.games}
+          currentPage={page}
+          totalPages={result.totalPages}
+        />
+        <>
+          <NewsList news={data?.news} iranGamesNews={data?.iranGameNews} />
+          <Videos videos={data.videos} />
+          <MobileGames mobileGames={data?.mobileGames} />
+        </>
       </div>
     );
   }

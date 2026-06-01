@@ -1,11 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
+import Pagination from "./Pagination";
 import { FaUser } from "react-icons/fa";
 import Button from "@/_components/Button";
 import SectionTitle from "./SectionTitle";
 import { Game } from "@/types/mainPageTypes";
 
-export default function Newest({ games }: { games: Game[] }) {
+interface NewestProps {
+  games: Game[];
+  currentPage: number;
+  totalPages: number;
+}
+
+export default function Newest({
+  games,
+  currentPage,
+  totalPages,
+}: NewestProps) {
   return (
     <div className="px-5 lg:px-0">
       <SectionTitle title="بازی های جدید" />
@@ -83,6 +94,7 @@ export default function Newest({ games }: { games: Game[] }) {
           </div>
         ))}
       </section>
+      <Pagination currentPage={currentPage} totalPages={totalPages} />
     </div>
   );
 }
