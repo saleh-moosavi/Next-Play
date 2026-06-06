@@ -4,7 +4,6 @@ import NewsList from "./components/NewsList";
 import HeroSlider from "./components/HeroSlider";
 import MobileGames from "./components/MobileGames";
 import { ScrapedData } from "@/types/mainPageTypes";
-import BackToTopBtn from "@/_components/BackToTopBtn";
 
 export const dynamic = "force-dynamic";
 
@@ -26,8 +25,7 @@ export default async function Home({ searchParams }: HomeProps) {
     const data: ScrapedData = result.data;
 
     return (
-      <div className="lg:max-w-5xl lg:mx-auto *:my-5">
-        <BackToTopBtn />
+      <>
         <HeroSlider slides={data?.slides} />
         <Newest
           games={data?.games}
@@ -39,7 +37,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <Videos videos={data.videos} />
           <MobileGames mobileGames={data?.mobileGames} />
         </>
-      </div>
+      </>
     );
   }
 }

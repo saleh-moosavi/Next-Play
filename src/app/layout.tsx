@@ -3,6 +3,7 @@ import "keen-slider/keen-slider.min.css";
 import type { Metadata } from "next";
 import Navbar from "@/_components/Navbar";
 import Footer from "@/_components/Footer";
+import BackToTopBtn from "@/_components/BackToTopBtn";
 import ReactQueryProvider from "@/providers/reactQueryProvider";
 
 export const metadata: Metadata = {
@@ -19,7 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-slate-800 dark:bg-slate-100 font-[vazir]" dir="rtl">
         <Navbar />
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider>
+          <div className="lg:max-w-5xl lg:mx-auto *:my-5">
+            <BackToTopBtn />
+            {children}
+          </div>
+        </ReactQueryProvider>
         <Footer />
       </body>
     </html>
