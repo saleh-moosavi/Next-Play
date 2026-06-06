@@ -27,7 +27,7 @@ export default function NewsRight({ news }: { news: News[] }) {
               width={500}
               height={500}
               className="w-full h-2/3 object-cover"
-              src={item.imageUrl}
+              src={item.imageUrl || "/alter-image.jpg"}
               alt={item.title}
             />
 

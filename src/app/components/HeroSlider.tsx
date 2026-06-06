@@ -27,7 +27,7 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
               <Image
                 width={1920}
                 height={1080}
-                src={slide.imgUrl}
+                src={slide.imgUrl || "/alter-image.jpg"}
                 alt={slide.title}
                 className="w-full h-64 sm:h-96 md:h-125 object-cover"
                 loading={idx === 0 ? "eager" : "lazy"}
@@ -112,7 +112,9 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
               >
                 <div className="relative w-full h-20 md:h-24">
                   <Image
-                    src={slide.thumbnailUrl || slide.imgUrl}
+                    src={
+                      slide.thumbnailUrl || slide.imgUrl || "/alter-image.jpg"
+                    }
                     alt={slide.title}
                     fill
                     className="object-cover"

@@ -34,7 +34,7 @@ export default function Newest({
                 width={500}
                 height={500}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 bg-linear-0 from-gray-500 to-gray-600"
-                src={game.thumbnail}
+                src={game.thumbnail || "/alter-image.jpg"}
                 alt={game.title}
               />
               {game.updateBadge && (

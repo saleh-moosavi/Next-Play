@@ -16,7 +16,7 @@ export default function NewsLeft({ news }: { news: IranGameNews[] }) {
               width={500}
               height={500}
               alt={news.title}
-              src={news.imageUrl}
+              src={news.imageUrl || "/alter-image.jpg"}
               className="w-14 h-14 rounded-xl object-cover group-hover:grayscale transition-all duration-700 -z-10"
             />
           </div>
