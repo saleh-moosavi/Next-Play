@@ -60,19 +60,23 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const englishDescription = $(".english-info p").text();
 
     let fullDescription = "";
-    $(".post-content p").each((_, element) => {
+    $(".post-content p, .post-content h2").each((_, element) => {
       const text = $(element).text().trim();
-      if (
-        text &&
-        !text.includes("در ادامه برای دانلود") &&
-        !text.includes("همراه باشید") &&
-        !text.includes("حداقل سیستم مورد نیاز") &&
-        !text.includes("سیستم پیشنهادی") &&
-        !text.includes("تصاویری از محیط بازی")
-      ) {
-        fullDescription += text + "\n\n";
-      }
+      fullDescription += text + "\n\n";
     });
+
+    fullDescription = fullDescription.slice(
+      0,
+      fullDescription.indexOf("اگر به این سبک بازی‌ها") ||
+        fullDescription.indexOf("در ادامه برای دانلود بازی"),
+    );
+    fullDescription = fullDescription.replace(
+      /^دانلود بازی.*?برای[^\n]*\n/,
+      "",
+    );
+
+    fullDescription = fullDescription.replace(/^نسخه.*?اضافه شد[^\n]*\n/, "");
+
     fullDescription = fullDescription.trim();
 
     const metaInfo: MetaInfo = {};
