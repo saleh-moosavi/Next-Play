@@ -38,6 +38,7 @@ export interface CurrentGame {
   date?: string;
   commentCount?: string;
   imageUrl?: string;
+  gameScreenshots: string[];
 }
 
 export interface SimilarGame {

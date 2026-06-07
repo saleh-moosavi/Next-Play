@@ -88,6 +88,14 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       }
     });
 
+    const gameScreenshots: string[] = [];
+    $(".gallery-item .gallery-icon a").each((_, element) => {
+      const imgUrl = $(element).attr("href");
+      if (imgUrl && imgUrl.match(/\.(jpg|jpeg|png|webp)$/i)) {
+        gameScreenshots.push(imgUrl);
+      }
+    });
+
     const links: DownloadLink[] = [];
     $(".buttondl-tab .tab-content a").each((_, element) => {
       const $link = $(element);
@@ -181,6 +189,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       date,
       commentCount,
       imageUrl,
+      gameScreenshots,
     };
 
     const similarGames = games;

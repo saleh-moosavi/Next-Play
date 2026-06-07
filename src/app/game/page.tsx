@@ -89,12 +89,12 @@ export default async function GamePage({
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <section className="p-5 lg:p-0 space-y-5">
       <MetaInfo currentGame={currentGame} />
       <Description currentGame={currentGame} />
       <DetailOS currentGame={currentGame} />
       <Links currentGame={currentGame} />
       <Simillar similarGames={similarGames} />
-    </div>
+    </section>
   );
 }
