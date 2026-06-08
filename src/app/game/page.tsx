@@ -93,7 +93,7 @@ export default async function GamePage({
       <MetaInfo currentGame={currentGame} />
       <Description currentGame={currentGame} />
       <DetailOS currentGame={currentGame} />
-      <Links currentGame={currentGame} />
+      <Links versions={currentGame.downloadLinks} />
       <Simillar similarGames={similarGames} />
     </section>
   );

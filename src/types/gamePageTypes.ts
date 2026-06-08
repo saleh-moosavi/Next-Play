@@ -1,7 +1,14 @@
 export interface DownloadLink {
+  noLink?: boolean;
   text: string;
   url: string | undefined;
   size: string;
+}
+
+export interface GameVersion {
+  title: string;
+  size: string;
+  links: DownloadLink[];
 }
 
 export interface MetaInfo {
@@ -17,7 +24,7 @@ export interface CurrentGame {
   englishDescription?: string;
   minOS: string;
   recommendOS: string;
-  downloadLinks: DownloadLink[];
+  downloadLinks: GameVersion[];
   metaInfo: MetaInfo;
   rating: number | null;
   viewCount?: string;

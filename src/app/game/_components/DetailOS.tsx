@@ -5,10 +5,12 @@ export default function DetailOS({
 }: {
   currentGame: CurrentGame;
 }) {
-  if (!currentGame.minOS && !currentGame.recommendOS) return null;
+  const hasTwoItems = !!(currentGame.minOS && currentGame.recommendOS);
+  const hasOneItems = !!(currentGame.minOS || currentGame.recommendOS);
+  if (!hasOneItems) return null;
   return (
     <div
-      className={`grid md:grid-cols-${currentGame.minOS && currentGame.recommendOS ? 2 : 1} gap-6`}
+      className={`grid grid-cols-1 gap-6 ${hasTwoItems ? "md:grid-cols-2" : "md:grid-cols-1"}`}
     >
       {currentGame.minOS && (
         <div className="bg-red-900 dark:bg-red-100 rounded-xl p-5 shadow-lg">

@@ -1,6 +1,7 @@
 import {
   CurrentGame,
   DownloadLink,
+  GameVersion,
   MetaData,
   MetaInfo,
   SimilarGame,
@@ -109,6 +110,83 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       });
     });
 
+    const gameVersions: GameVersion[] = [];
+    $(".buttondl-tab .tab-title .tab").each((index, tabElement) => {
+      const $tab = $(tabElement);
+      const $tabLink = $tab.find("a.buttondl");
+
+      const versionTitle = $tabLink
+        .contents()
+        .filter(function () {
+          return this.type === "text";
+        })
+        .text()
+        .trim();
+
+      const versionSize = $tabLink.find("span").text().trim();
+
+      const tabId = $tab.attr("data-tab");
+      const tabContent = $(
+        `.buttondl-tab .tab-content > div[data-tabc="${tabId}"]`,
+      );
+
+      const links: DownloadLink[] = [];
+
+      tabContent.find("ul").each((_, ulElement) => {
+        const $ul = $(ulElement);
+
+        const children = $ul.contents();
+
+        children.each((_, child) => {
+          const $child = $(child);
+
+          if ($child.is("b")) {
+            const bText = $child.attr("data-title") || $child.text().trim();
+            if (bText) {
+              links.push({
+                noLink: true,
+                text: bText,
+                url: undefined,
+                size: "",
+              });
+            }
+          }
+
+          if ($child.is("li")) {
+            $child.find("a").each((_, linkElement) => {
+              const $link = $(linkElement);
+              const linkText = $link
+                .contents()
+                .filter(function () {
+                  return this.type === "text";
+                })
+                .text()
+                .trim();
+              const linkUrl = $link.attr("href");
+              const linkSize = $link.find("span").text().trim();
+
+              if (linkUrl) {
+                links.push({
+                  noLink: false,
+                  text: linkText || $link.text().replace(linkSize, "").trim(),
+                  url: linkUrl,
+                  size: linkSize,
+                });
+              }
+            });
+          }
+        });
+      });
+
+      if (links.length > 0 && versionTitle) {
+        gameVersions.push({
+          title: versionTitle,
+          size: versionSize,
+          links: links,
+        });
+      }
+    });
+
     let minOS = "";
     $(`h3:contains("حداقل سیستم مورد نیاز")`)
       .nextUntil("h3")
@@ -158,7 +236,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       metaDescription: $('meta[name="description"]').attr("content"),
       fullDescription,
       englishDescription: englishDescription || undefined,
-      downloadLinks: links,
+      downloadLinks: gameVersions,
       recommendOS,
       minOS,
       metaInfo,
