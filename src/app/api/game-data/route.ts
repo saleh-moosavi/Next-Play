@@ -4,7 +4,6 @@ import {
   MetaData,
   MetaInfo,
   SimilarGame,
-  SystemRequirement,
 } from "@/types/gamePageTypes";
 import * as cheerio from "cheerio";
 import { NextRequest, NextResponse } from "next/server";
@@ -110,46 +109,21 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       });
     });
 
-    const minOS: SystemRequirement = {};
+    let minOS = "";
     $(`h3:contains("حداقل سیستم مورد نیاز")`)
       .nextUntil("h3")
       .each((_, element) => {
         if ($(element).is("p")) {
-          const text = $(element).text();
-
-          if (text.includes("OS:")) minOS.os = text.replace("OS:", "").trim();
-          if (text.includes("Processor:"))
-            minOS.processor = text.replace("Processor:", "").trim();
-          if (text.includes("Memory:"))
-            minOS.memory = text.replace("Memory:", "").trim();
-          if (text.includes("Graphics:"))
-            minOS.graphics = text.replace("Graphics:", "").trim();
-          if (text.includes("DirectX:"))
-            minOS.directX = text.replace("DirectX:", "").trim();
-          if (text.includes("Storage:"))
-            minOS.storage = text.replace("Storage:", "").trim();
+          minOS = $(element).text();
         }
       });
 
-    const recommendOS: SystemRequirement = {};
+    let recommendOS = "";
     $(`h3:contains("سیستم پیشنهادی")`)
       .nextUntil("h3")
       .each((_, element) => {
         if ($(element).is("p")) {
-          const text = $(element).text();
-
-          if (text.includes("OS:"))
-            recommendOS.os = text.replace("OS:", "").trim();
-          if (text.includes("Processor:"))
-            recommendOS.processor = text.replace("Processor:", "").trim();
-          if (text.includes("Memory:"))
-            recommendOS.memory = text.replace("Memory:", "").trim();
-          if (text.includes("Graphics:"))
-            recommendOS.graphics = text.replace("Graphics:", "").trim();
-          if (text.includes("DirectX:"))
-            recommendOS.directX = text.replace("DirectX:", "").trim();
-          if (text.includes("Storage:"))
-            recommendOS.storage = text.replace("Storage:", "").trim();
+          recommendOS = $(element).text();
         }
       });
 

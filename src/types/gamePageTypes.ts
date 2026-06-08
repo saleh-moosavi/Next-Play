@@ -1,17 +1,3 @@
-export interface SystemRequirement {
-  os?: string;
-  processor?: string;
-  memory?: string;
-  graphics?: string;
-  directX?: string;
-  storage?: string;
-}
-
-export interface SystemRequirements {
-  minimum: SystemRequirement;
-  recommended: SystemRequirement;
-}
-
 export interface DownloadLink {
   text: string;
   url: string | undefined;
@@ -29,8 +15,8 @@ export interface CurrentGame {
   metaDescription: string | undefined;
   fullDescription: string;
   englishDescription?: string;
-  minOS: SystemRequirement;
-  recommendOS: SystemRequirement;
+  minOS: string;
+  recommendOS: string;
   downloadLinks: DownloadLink[];
   metaInfo: MetaInfo;
   rating: number | null;
