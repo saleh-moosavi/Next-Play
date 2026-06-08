@@ -6,9 +6,7 @@ import {
   HiChat,
   HiEye,
   HiStar,
-  HiOutlineStar,
   HiRefresh,
-  HiPhotograph,
   HiSearch,
 } from "react-icons/hi";
 
@@ -66,12 +64,9 @@ export default function MetaInfo({
             <div className="flex items-center">
               {[...Array(5)].map((_, i) =>
                 i < Math.floor(currentGame.rating!) ? (
-                  <HiStar key={i} className="w-5 h-5 text-yellow-400" />
+                  <HiStar key={i} className="size-5 text-yellow-400" />
                 ) : (
-                  <HiOutlineStar
-                    key={i}
-                    className="w-5 h-5 text-gray-300 dark:text-gray-600"
-                  />
+                  <HiStar key={i} className="size-5 text-gray-300" />
                 ),
               )}
             </div>
@@ -111,7 +106,6 @@ export default function MetaInfo({
             <div className="mt-auto">
               <div>
                 <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <HiPhotograph className="w-6 h-6 text-purple-500" />
                   تصاویری از محیط بازی
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -128,7 +122,7 @@ export default function MetaInfo({
                         alt={`${currentGame.title} - تصویر ${index + 1}`}
                         width={500}
                         height={500}
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <HiSearch className="w-8 h-8 text-white" />
