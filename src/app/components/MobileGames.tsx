@@ -79,7 +79,7 @@ export default function MobileGames({
           ))}
         </article>
       </section>
-      <Button>مشاهده همه</Button>
+      <Button rounded="md">مشاهده همه</Button>
     </div>
   );
 }

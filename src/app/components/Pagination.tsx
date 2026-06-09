@@ -74,10 +74,10 @@ export default function Pagination({
           <Link
             key={page}
             href={`?page=${page}`}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            className={`px-4 py-2 rounded-lg transition-colors text-white ${
               currentPage === page
-                ? "bg-orange-500 text-white cursor-default"
-                : "bg-gray-700 dark:bg-gray-300 text-white dark:text-gray-900 hover:bg-orange-500 dark:hover:bg-orange-500"
+                ? "bg-orange-600 cursor-default"
+                : "bg-gray-700 dark:bg-gray-500 hover:bg-orange-600"
             }`}
           >
             {page}

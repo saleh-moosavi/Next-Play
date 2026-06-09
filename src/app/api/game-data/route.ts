@@ -68,7 +68,8 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     fullDescription = fullDescription.slice(
       0,
       fullDescription.indexOf("اگر به این سبک بازی‌ها") ||
-        fullDescription.indexOf("در ادامه برای دانلود بازی"),
+        fullDescription.indexOf("در ادامه برای دانلود بازی") ||
+        fullDescription.indexOf("اگر نرم افزار مدیریت دانلود ندارید"),
     );
     fullDescription = fullDescription.replace(
       /^دانلود بازی.*?برای[^\n]*\n/,

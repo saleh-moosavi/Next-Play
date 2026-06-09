@@ -44,7 +44,7 @@ export default function Videos({ videos }: { videos: Video[] }) {
           );
         })}
       </section>
-      <Button>مشاهده همه</Button>
+      <Button rounded="md">مشاهده همه</Button>
     </div>
   );
 }
