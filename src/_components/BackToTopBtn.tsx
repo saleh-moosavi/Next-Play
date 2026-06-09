@@ -27,7 +27,7 @@ export default function BackToTopBtn() {
       }`}
     >
       <FaChevronCircleUp
-        className="size-6 text-purple-600"
+        className="size-7 text-orange-500"
         onClick={backToTopOfSite}
       />
     </div>
