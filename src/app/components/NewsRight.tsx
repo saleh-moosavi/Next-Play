@@ -26,7 +26,7 @@ export default function NewsRight({ news }: { news: News[] }) {
             <Image
               width={500}
               height={500}
-              className="w-full h-2/3 object-cover"
+              className="w-full h-2/3 object-cover bg-gray-400"
               src={item.imageUrl || "/alter-image.jpg"}
               alt={item.title}
             />

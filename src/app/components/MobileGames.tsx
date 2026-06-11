@@ -24,7 +24,7 @@ export default function MobileGames({
                 width={500}
                 height={500}
                 alt={game.title}
-                className="w-full h-52 md:h-72 lg:h-52 object-cover group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700"
+                className="w-full h-52 md:h-72 lg:h-52 object-cover bg-gray-400 group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-700"
                 src={game.iconUrl || "/alter-image.jpg"}
               />
               <p className="absolute top-2 right-2 flex items-center bg-black/60 px-2 py-[.1rem] text-xs font-semibold rounded-full select-none">

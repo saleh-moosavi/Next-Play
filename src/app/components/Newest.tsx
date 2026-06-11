@@ -36,7 +36,7 @@ export default function Newest({
                 <Image
                   width={500}
                   height={500}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 bg-linear-0 from-gray-500 to-gray-600"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 bg-gray-400"
                   src={game.thumbnail || "/alter-image.jpg"}
                   alt={game.title}
                 />
@@ -64,16 +64,14 @@ export default function Newest({
 
                 {Object.keys(game.details).length > 0 && (
                   <div className="mt-3 flex flex-col gap-1">
-                    {Object.entries(game.details)
-                      .slice(0, 2)
-                      .map(([key, value]) => (
-                        <span
-                          key={key}
-                          className="text-xs bg-black/20 dark:bg-white/20 px-2 py-1 rounded-md w-fit"
-                        >
-                          {key}: {value}
-                        </span>
-                      ))}
+                    {Object.entries(game.details).map(([key, value]) => (
+                      <span
+                        key={key}
+                        className="text-xs bg-black/20 dark:bg-white/20 px-2 py-1 rounded-md w-fit"
+                      >
+                        {key}: {value}
+                      </span>
+                    ))}
                   </div>
                 )}
 

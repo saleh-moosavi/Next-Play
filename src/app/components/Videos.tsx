@@ -26,7 +26,7 @@ export default function Videos({ videos }: { videos: Video[] }) {
                 width={500}
                 height={500}
                 alt={video.title}
-                className="w-full h-full object-cover group-hover:blur-sm transition-all duration-700"
+                className="w-full h-full object-cover group-hover:blur-sm transition-all duration-700 bg-gray-400"
                 src={video.imageUrl || "/alter-image.jpg"}
               />
               <div className="absolute p-2 w-full bottom-0 top-0 flex flex-col justify-center items-center text-white text-center group-hover:bg-black/40 transition-all duration-700">

@@ -25,11 +25,11 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
           {slides.map((slide, idx) => (
             <div key={idx} className="keen-slider__slide relative">
               <Image
-                width={1920}
-                height={1080}
+                width={500}
+                height={500}
                 src={slide.imgUrl || "/alter-image.jpg"}
                 alt={slide.title}
-                className="w-full h-64 sm:h-96 md:h-125 object-cover"
+                className="w-full h-64 sm:h-96 md:h-125 object-cover bg-gray-400"
                 loading={idx === 0 ? "eager" : "lazy"}
                 priority={idx === 0}
               />
@@ -110,15 +110,15 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
                 }`}
                 onClick={() => sliderInstance.moveToIdx(idx)}
               >
-                <div className="relative w-full h-20 md:h-24">
+                <div className="relative w-full h-20 md:h-32 bg-gray-400">
                   <Image
                     src={
                       slide.thumbnailUrl || slide.imgUrl || "/alter-image.jpg"
                     }
                     alt={slide.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 20vw, 15vw"
+                    className="object-cover origin-center"
+                    width={500}
+                    height={500}
                   />
                 </div>
               </div>

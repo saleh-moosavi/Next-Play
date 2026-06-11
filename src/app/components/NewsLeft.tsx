@@ -17,7 +17,7 @@ export default function NewsLeft({ news }: { news: IranGameNews[] }) {
               height={500}
               alt={news.title}
               src={news.imageUrl || "/alter-image.jpg"}
-              className="w-14 h-14 rounded-xl object-cover group-hover:grayscale transition-all duration-700 -z-10"
+              className="w-14 h-14 rounded-xl object-cover group-hover:grayscale transition-all duration-700 bg-gray-400 -z-10"
             />
           </div>
           <article className="col-span-3 flex flex-col items-start justify-between">
