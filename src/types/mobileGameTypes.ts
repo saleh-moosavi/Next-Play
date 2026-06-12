@@ -63,19 +63,11 @@ export interface MobileSimilarGame {
   downloadCount?: string;
 }
 
-export interface MobileMetaData {
-  url: string | undefined;
-  publishedTime: string | undefined;
-  categories: string[];
-  gameId?: string;
-}
-
 export interface MobileGameResponse {
   success: boolean;
   data?: {
     currentGame: MobileCurrentGame;
     similarGames: MobileSimilarGame[];
-    meta: MobileMetaData;
   };
   error?: string;
 }

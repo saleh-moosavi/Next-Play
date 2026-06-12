@@ -2,7 +2,6 @@ import {
   MobileCurrentGame,
   MobileDownloadLink,
   MobileGameVersion,
-  MobileMetaData,
   MobileMetaInfo,
   MobileSimilarGame,
   MobileGameInfo,
@@ -61,7 +60,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       .trim();
     const englishDescription = $(".english-info p").text();
 
-    // توضیحات کامل
     let fullDescription = "";
     $(".post-content p, .post-content h2").each((_, element) => {
       const text = $(element).text().trim();
@@ -85,7 +83,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     fullDescription = fullDescription.replace(/^نسخه.*?اضافه شد[^\n]*\n/, "");
     fullDescription = fullDescription.trim();
 
-    // اطلاعات اختصاصی موبایل
     const mobileInfo: MobileGameInfo = {
       price: "",
       developer: "",
@@ -112,7 +109,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       }
     });
 
-    // متا اطلاعات
     const metaInfo: MobileMetaInfo = {};
     $(".infodl li").each((_, element) => {
       const text = $(element).text();
@@ -127,7 +123,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       }
     });
 
-    // اسکرین شات‌ها
     const gameScreenshots: string[] = [];
     $(".gallery-item .gallery-icon a").each((_, element) => {
       const imgUrl = $(element).attr("href");
@@ -136,7 +131,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       }
     });
 
-    // نسخه‌ها و لینک‌های دانلود
     const gameVersions: MobileGameVersion[] = [];
 
     $(".buttondl-tab .tab-title .tab").each((_, tabElement) => {
@@ -239,20 +233,17 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       installGuide = installMatch[1].trim();
     }
 
-    // امتیاز
     let rating: number | null = null;
     const ratingValue = $(".rate_star").attr("r");
     if (ratingValue) {
       rating = parseFloat(ratingValue);
     }
 
-    // تشخیص آفلاین بودن
     const isOffline =
       fullDescription.includes("آفلاین") ||
       fullDescription.includes("Offline") ||
       $(".tags a").text().includes("آفلاین");
 
-    // بازی‌های مشابه
     const similarGames: MobileSimilarGame[] = [];
     $(".relate .mobile-game-post").each((_, element) => {
       const $game = $(element);
@@ -261,7 +252,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       const $img = $game.find("img");
       const url = $link.attr("href");
 
-      // استخراج امتیاز از ستاره‌ها
       const starWidth = $game.find(".rate").attr("style") || "";
       const ratingMatch = starWidth.match(/(\d+)%/);
       const gameRating = ratingMatch
@@ -284,17 +274,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       });
     });
 
-    // متا دیتا
-    const meta: MobileMetaData = {
-      url: $('link[rel="canonical"]').attr("href"),
-      publishedTime: $('meta[property="article:published_time"]').attr(
-        "content",
-      ),
-      categories,
-      gameId: gameUrl.split("/")[0],
-    };
-
-    // ساخت آبجکت نهایی
     const currentGame: MobileCurrentGame = {
       title,
       metaDescription: $('meta[name="description"]').attr("content") || null,
@@ -322,7 +301,6 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       data: {
         currentGame,
         similarGames,
-        meta,
       },
     });
   } catch (error) {
