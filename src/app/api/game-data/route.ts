@@ -69,7 +69,10 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       0,
       fullDescription.indexOf("اگر به این سبک بازی‌ها") ||
         fullDescription.indexOf("در ادامه برای دانلود بازی") ||
-        fullDescription.indexOf("اگر نرم افزار مدیریت دانلود ندارید"),
+        fullDescription.indexOf("اگر نرم افزار مدیریت دانلود ندارید") ||
+        fullDescription.indexOf(
+          "در ادامه برای دانلود بازی با وب‌سایت پارسی گیم همراه باشید",
+        ),
     );
     fullDescription = fullDescription.replace(
       /^دانلود بازی.*?برای[^\n]*\n/,
