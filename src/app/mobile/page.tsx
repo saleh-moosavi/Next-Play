@@ -109,7 +109,7 @@ export default async function MobileGamePage({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen space-y-5">
       <MetaInfo game={currentGame} />
 
       <Details game={currentGame} />

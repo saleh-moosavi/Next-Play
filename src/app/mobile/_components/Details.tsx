@@ -1,52 +1,71 @@
-import { MobileCurrentGame } from "@/types/mobileGameTypes";
+import Link from "next/link";
 import Image from "next/image";
+import { MobileCurrentGame } from "@/types/mobileGameTypes";
 
 export default function Details({ game }: { game: MobileCurrentGame }) {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-      <div className="bg-blue-600 px-6 py-4">
-        <h2 className="text-xl font-bold text-white flex items-center gap-2">
-          <span>ℹ️</span> اطلاعات بازی
-        </h2>
-      </div>
-      <div className="p-6 space-y-6">
-        {/* جدول اطلاعات */}
+    <div className="bg-gray-700 dark:bg-white rounded-xl shadow-lg overflow-hidden p-5 space-y-5">
+      <h2 className="text-xl font-bold flex items-center gap-2">
+        اطلاعات بازی
+      </h2>
+      <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <div className="text-sm text-gray-500">👨‍💻 سازنده</div>
-            <div className="font-medium">{game.mobileInfo.developer}</div>
+          <div className="space-y-2 rounded-lg">
+            <div className="text-sm font-bold text-gray-300 dark:text-gray-400">
+              . سازنده
+            </div>
+            <div className="font-bold px-4">
+              {game.mobileInfo.developer || "نامشخص"}
+            </div>
           </div>
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <div className="text-sm text-gray-500">🎮 سبک</div>
-            <div className="font-medium">{game.mobileInfo.genre}</div>
+          <div className="space-y-2 rounded-lg">
+            <div className="text-sm font-bold text-gray-300 dark:text-gray-400">
+              . سبک
+            </div>
+            <div className="font-bold px-4">
+              {game.mobileInfo.genre || "نامشخص"}
+            </div>
           </div>
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <div className="text-sm text-gray-500">📱 سیستم عامل</div>
-            <div className="font-medium">{game.mobileInfo.os}</div>
+          <div className="space-y-2 rounded-lg">
+            <div className="text-sm font-bold text-gray-300 dark:text-gray-400">
+              . سیستم عامل
+            </div>
+            <div className="font-bold px-4">
+              {game.mobileInfo.os || "نامشخص"}
+            </div>
           </div>
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <div className="text-sm text-gray-500">🤖 حداقل نسخه اندروید</div>
-            <div className="font-medium">{game.minOS}</div>
+          <div className="space-y-2 rounded-lg">
+            <div className="text-sm font-bold text-gray-300 dark:text-gray-400">
+              . حداقل نسخه اندروید
+            </div>
+            <div className="font-bold px-4">{game.minOS || "نامشخص"}</div>
           </div>
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <div className="text-sm text-gray-500">🔞 رده سنی</div>
-            <div className="font-medium">{game.mobileInfo.ageRating}</div>
+          <div className="space-y-2 rounded-lg">
+            <div className="text-sm font-bold text-gray-300 dark:text-gray-400">
+              . رده سنی
+            </div>
+            <div className="font-bold px-4">
+              {game.mobileInfo.ageRating || "نامشخص"}
+            </div>
           </div>
-          <div className="bg-gray-50 p-4 rounded-lg">
-            <div className="text-sm text-gray-500">💰 قیمت</div>
-            <div className="font-medium">{game.mobileInfo.price}</div>
+          <div className="space-y-2 rounded-lg">
+            <div className="text-sm font-bold text-gray-300 dark:text-gray-400">
+              . قیمت
+            </div>
+            <div className="font-bold px-4">
+              {game.mobileInfo.price || "نامشخص"}
+            </div>
           </div>
         </div>
 
-        {/* توضیحات */}
         {game.fullDescription && (
           <div>
-            <h3 className="text-xl font-bold mb-3">📝 توضیحات بازی</h3>
-            <div className="prose prose-sm max-w-none bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-3">توضیحات</h3>
+            <div className="rounded-lg">
               {game.fullDescription.split("\n").map(
                 (paragraph, idx) =>
                   paragraph.trim() && (
-                    <p key={idx} className="mb-2">
+                    <p key={idx} className="mb-5 text-justify">
                       {paragraph}
                     </p>
                   ),
@@ -55,31 +74,26 @@ export default function Details({ game }: { game: MobileCurrentGame }) {
           </div>
         )}
 
-        {/* اسکرین شات‌ها */}
         {game.gameScreenshots.length > 0 && (
           <div>
-            <h3 className="text-xl font-bold mb-3">📸 تصاویر بازی</h3>
+            <h3 className="text-xl font-bold mb-3">تصاویر بازی</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {game.gameScreenshots.map((screenshot, idx) => (
-                <a
+                <Link
                   key={idx}
                   href={screenshot}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative aspect-video rounded-lg overflow-hidden bg-gray-100 group"
+                  className="relative group overflow-hidden rounded-lg"
                 >
                   <Image
                     src={screenshot}
                     alt={`${game.title} - تصویر ${idx + 1}`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    width={500}
+                    height={500}
+                    className="object-cover w-full h-full rounded-lg group-hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 text-white text-2xl">
-                      🔍
-                    </span>
-                  </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
