@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Links from "./_components/Links";
-import Guides from "./_components/Guides";
 import { notFound } from "next/navigation";
 import Details from "./_components/Details";
 import Simillar from "./_components/Simillar";
@@ -114,7 +113,6 @@ export default async function MobileGamePage({
 
       <Details game={currentGame} />
       <Links game={currentGame} />
-      <Guides game={currentGame} />
 
       <div className="container mx-auto px-4 py-8">
         <Simillar similarGames={similarGames} />

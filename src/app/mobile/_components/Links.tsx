@@ -43,6 +43,16 @@ export default function Links({ game }: { game: MobileCurrentGame }) {
           ))}
         </div>
       </div>
+      {game.metaInfo.password && (
+        <div className="overflow-hidden space-y-5">
+          <h2 className="text-xl font-bold">رمز فایل‌های فشرده</h2>
+          <div className="bg-gray-800 dark:bg-gray-100 w-full p-5 rounded-lg">
+            <code className="text-yellow-200 dark:text-yellow-600">
+              {game.metaInfo.password}
+            </code>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
