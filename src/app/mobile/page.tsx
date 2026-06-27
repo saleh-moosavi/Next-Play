@@ -110,13 +110,9 @@ export default async function MobileGamePage({
   return (
     <div className="min-h-screen space-y-5">
       <MetaInfo game={currentGame} />
-
       <Details game={currentGame} />
       <Links game={currentGame} />
-
-      <div className="container mx-auto px-4 py-8">
-        <Simillar similarGames={similarGames} />
-      </div>
+      <Simillar similarGames={similarGames} />
     </div>
   );
 }

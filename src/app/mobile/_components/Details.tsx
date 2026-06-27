@@ -87,11 +87,11 @@ export default function Details({ game }: { game: MobileCurrentGame }) {
                   className="relative group overflow-hidden rounded-lg"
                 >
                   <Image
-                    src={screenshot}
+                    src={screenshot || "/alter-image.jpg"}
                     alt={`${game.title} - تصویر ${idx + 1}`}
                     width={500}
                     height={500}
-                    className="object-cover w-full h-full rounded-lg group-hover:scale-105 transition-all duration-300"
+                    className="object-cover w-full h-full rounded-lg bg-gray-400 group-hover:scale-105 transition-all duration-300"
                   />
                 </Link>
               ))}
