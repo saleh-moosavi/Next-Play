@@ -38,9 +38,7 @@ export default function Simillar({
               </p>
               {/* Star Section */}
               <section className="flex items-center justify-center gap-2">
-                <span className="text-xs ml-1 order-2">
-                  ({game.rating}%)
-                </span>
+                <span className="text-xs ml-1 order-2">({game.rating}%)</span>
                 <div className="flex items-center gap-1 flex-row-reverse order-1">
                   {[...Array(5)].map((_, index) => {
                     const starValue = index + 1;

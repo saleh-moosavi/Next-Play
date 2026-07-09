@@ -16,6 +16,8 @@ export default function Videos({ videos }: { videos: Video[] }) {
           } else {
             spanClass = "md:col-span-6";
           }
+          const slug = video.link.split("/")[4];
+          console.log(slug)
 
           return (
             <div
@@ -31,7 +33,7 @@ export default function Videos({ videos }: { videos: Video[] }) {
               />
               <div className="absolute p-2 w-full bottom-0 top-0 flex flex-col justify-center items-center text-white text-center group-hover:bg-black/40 transition-all duration-700">
                 <Link
-                  href={video.link}
+                  href={`trailer?slug=${slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold line-clamp-2 px-2"
