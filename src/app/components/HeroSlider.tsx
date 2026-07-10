@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import Button from "@/_components/Button";
+import { extractGameUrl } from "@/lib/utils";
 import { Slide } from "@/types/mainPageTypes";
 import { useHeroSlider } from "../hooks/useHeroSlider";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
@@ -22,41 +24,41 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
     <div className="w-full max-w-6xl mx-auto px-5 lg:px-0">
       <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
         <div ref={sliderRef} className="keen-slider">
-          {slides.map((slide, idx) => (
-            <div key={idx} className="keen-slider__slide relative">
-              <Image
-                width={500}
-                height={500}
-                src={slide.imgUrl || "/alter-image.jpg"}
-                alt={slide.title}
-                className="w-full h-64 sm:h-96 md:h-125 object-cover bg-gray-400"
-                loading={idx === 0 ? "eager" : "lazy"}
-                priority={idx === 0}
-              />
+          {slides.map((slide, idx) => {
+            const gameSlug = extractGameUrl(slide.link);
+            return (
+              <div key={idx} className="keen-slider__slide relative">
+                <Image
+                  width={500}
+                  height={500}
+                  src={slide.imgUrl || "/alter-image.jpg"}
+                  alt={slide.title}
+                  className="w-full h-64 sm:h-96 md:h-125 object-cover bg-gray-400"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                  priority={idx === 0}
+                />
 
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 text-white flex justify-center items-center">
-                <div className="max-w-2xl">
-                  <h2 className="text-xl md:text-3xl lg:text-2xl font-bold mb-2 line-clamp-2">
-                    {slide.title}
-                  </h2>
-                  <p className="text-sm md:text-base text-justify text-gray-200 line-clamp-3 mb-4">
-                    {slide.description}
-                  </p>
-                  <a
-                    href={slide.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button color="purple" rounded="lg">
-                      مشاهده جزئیات
-                    </Button>
-                  </a>
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 text-white flex justify-center items-center">
+                  <div className="max-w-2xl">
+                    <h2 className="text-xl md:text-3xl lg:text-2xl font-bold mb-2 line-clamp-2">
+                      {slide.title}
+                    </h2>
+                    <p className="text-sm md:text-base text-justify text-gray-200 line-clamp-3 mb-4">
+                      {slide.description}
+                    </p>
+
+                    <Link href={`game?slug=${gameSlug}`}>
+                      <Button color="purple" rounded="lg">
+                        مشاهده جزئیات
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {loaded && sliderInstance && (
