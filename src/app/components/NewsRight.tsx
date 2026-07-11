@@ -21,33 +21,35 @@ export default function NewsRight({ news }: { news: News[] }) {
   return (
     <article className="relative w-full h-120 rounded-xl overflow-hidden text-white bg-black/20 group">
       <div ref={sliderRef} className="keen-slider h-full">
-        {news.map((item, idx) => (
-          <div key={idx} className="keen-slider__slide relative h-full">
-            <Image
-              width={500}
-              height={500}
-              className="w-full h-2/3 object-cover bg-gray-400"
-              src={item.imageUrl || "/alter-image.jpg"}
-              alt={item.title}
-            />
+        {news.map((item, idx) => {
+          const newsparts = item.link.split("/");
+          const newsLink = newsparts[3] + "/" + newsparts[4];
+          return (
+            <div key={idx} className="keen-slider__slide relative h-full">
+              <Image
+                width={500}
+                height={500}
+                className="w-full h-2/3 object-cover bg-gray-400"
+                src={item.imageUrl || "/alter-image.jpg"}
+                alt={item.title}
+              />
 
-            <div className="p-5">
-              <div className="mb-2">
-                <span className="text-xs font-semibold px-3 py-1 rounded-lg bg-purple-500/80 backdrop-blur-sm">
-                  {item.date}
-                </span>
+              <div className="p-5">
+                <div className="mb-2">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-lg bg-purple-500/80 backdrop-blur-sm">
+                    {item.date}
+                  </span>
+                </div>
+                <Link
+                  href={"news?slug=" + newsLink}
+                  className="my-3 font-bold text-xl cursor-pointer hover:text-purple-300 transition-colors line-clamp-2"
+                >
+                  {item.title}
+                </Link>
               </div>
-              <Link
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="my-3 font-bold text-xl cursor-pointer hover:text-purple-300 transition-colors line-clamp-2"
-              >
-                {item.title}
-              </Link>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {loaded && sliderInstance && news.length > 1 && (
