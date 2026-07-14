@@ -35,11 +35,10 @@ export default function Navbar() {
               <FaGamepad className="w-7 h-7 text-purple-500 dark:text-purple-700" />
             </Link>
           </li>
-          <li>خانه</li>
-          <li>فروشگاه</li>
+          <li>تریلر ها</li>
+          <li>بازی های اندروید</li>
           <li>درباره ما</li>
           <li>تماس با ما</li>
-          <li>وبلاگ</li>
         </ul>
         <div className="sm:hidden flex gap-x-5 *:cursor-pointer">
           <PiList

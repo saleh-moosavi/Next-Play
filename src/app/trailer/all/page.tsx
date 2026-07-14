@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { AllTrailersResponse } from "@/types/trailerTypes";
 import Button from "@/_components/Button";
+import { AllTrailersResponse } from "@/types/trailerTypes";
 
 async function getVideos(page: number): Promise<AllTrailersResponse> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
