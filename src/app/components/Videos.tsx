@@ -43,7 +43,9 @@ export default function Videos({ videos }: { videos: Video[] }) {
           );
         })}
       </section>
-      <Button rounded="md">مشاهده همه</Button>
+      <Link href="/trailer/all">
+        <Button rounded="md">مشاهده همه</Button>
+      </Link>
     </div>
   );
 }

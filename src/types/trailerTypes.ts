@@ -7,3 +7,20 @@ export interface TrailerData {
     q1080?: string;
   };
 }
+
+export interface AllTrailers {
+  title: string;
+  imageUrl: string;
+  duration: string;
+  slug: string;
+  author: string;
+  date: string;
+  link: string;
+}
+
+export interface AllTrailersResponse {
+  videos: AllTrailers[];
+  hasMore: boolean;
+  nextPage: number | null;
+  currentPage: number;
+}
