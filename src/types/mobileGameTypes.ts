@@ -71,3 +71,19 @@ export interface MobileGameResponse {
   };
   error?: string;
 }
+
+export interface AllMobileGame {
+  title: string;
+  iconUrl: string;
+  slug: string;
+  date: string;
+  ratingPercent: number;
+  link: string;
+}
+
+export interface AllMobileGamesResponse {
+  games: AllMobileGame[];
+  hasMore: boolean;
+  nextPage: number | null;
+  currentPage: number;
+}

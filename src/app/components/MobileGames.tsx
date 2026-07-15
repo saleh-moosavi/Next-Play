@@ -81,7 +81,9 @@ export default function MobileGames({
           })}
         </article>
       </section>
-      <Button rounded="md">مشاهده همه</Button>
+      <Link href="/mobile/all">
+        <Button rounded="md">مشاهده همه</Button>
+      </Link>
     </div>
   );
 }
