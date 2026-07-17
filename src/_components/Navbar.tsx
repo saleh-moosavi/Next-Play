@@ -35,7 +35,9 @@ export default function Navbar() {
               <FaGamepad className="w-7 h-7 text-purple-500 dark:text-purple-700" />
             </Link>
           </li>
-          <li>تریلر ها</li>
+          <li>
+            <Link href="/trailer/all">تریلر ها</Link>
+          </li>
           <li>
             <Link href="/mobile/all">بازی های اندروید</Link>
           </li>

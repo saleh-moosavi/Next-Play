@@ -49,14 +49,15 @@ export default async function Page({
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">همه ی تریلر ها</h1>
-
       {videos.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-gray-500">هیچ ویدئویی یافت نشد</p>
+        <div className="text-center py-12 min-h-[80vh] flex justify-center items-center">
+          <p className="text-3xl">هیچ ویدئویی یافت نشد</p>
         </div>
       ) : (
         <>
+          <h1 className="text-3xl font-bold mb-8 text-center">
+            همه ی تریلر ها
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {videos.map((video, index) => {
               const slug =
