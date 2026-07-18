@@ -41,8 +41,12 @@ export default function Navbar() {
           <li>
             <Link href="/mobile/all">بازی های اندروید</Link>
           </li>
-          <li>درباره ما</li>
-          <li>تماس با ما</li>
+          <li>
+            <Link href="/about">درباره ما</Link>
+          </li>
+          <li>
+            <Link href="/contact">تماس با ما</Link>
+          </li>
         </ul>
         <div className="sm:hidden flex gap-x-5 *:cursor-pointer">
           <PiList
