@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { FaExclamationTriangle, FaHome, FaRedo, FaBug } from "react-icons/fa";
+import { FaHome, FaRedo } from "react-icons/fa";
 
 interface ErrorPageProps {
   error: Error & { digest?: string };
@@ -15,11 +15,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
   }, [error]);
 
   return (
-    <div className="min-h-[80vh] text-center bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-50 dark:to-gray-100 flex flex-col items-center justify-center gap-5 p-4 rounded-xl overflow-hidden">
-      <div className="inline-block bg-linear-to-br from-red-500 to-orange-500 rounded-3xl p-6 shadow-2xl">
-        <FaExclamationTriangle className="w-16 h-16 text-white" />
-      </div>
-
+    <div className="min-h-[80vh] text-center bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-50 dark:to-gray-100 flex flex-col items-center justify-center gap-5 p-4 mx-5 lg:mx-0 rounded-xl overflow-hidden">
       <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900 mb-4">
         خطا در{" "}
         <span className="text-red-400 dark:text-red-600 inline-block">
@@ -29,7 +25,6 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
 
       {/* Error Details */}
       <div className="bg-white/5 dark:bg-gray-800/30 rounded-xl p-4 mb-6 border border-white/10 dark:border-gray-200/20 flex items-center gap-3 text-gray-300 dark:text-gray-600 text-sm">
-        <FaBug className="w-5 h-5 text-orange-400" />
         <span>خطای غیرمنتظره‌ای رخ داده است. تیم ما در حال بررسی است.</span>
       </div>
 
