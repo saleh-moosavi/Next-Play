@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Container from "@/_components/Container";
 import {
   FaEnvelope,
   FaPhone,
@@ -19,9 +20,9 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-50 dark:to-gray-100 rounded-xl overflow-hidden">
+    <Container>
       {/* Hero Section */}
-      <section className="flex flex-col justify-center items-center p-16 md:p-32 bg-linear-to-r from-purple-900/20 via-blue-900/20 to-purple-900/20 dark:from-purple-200/30 dark:via-blue-200/30 dark:to-purple-200/30">
+      <section className="flex flex-col justify-center items-center p-16 md:p-32 bg-transparent">
         <h1 className="text-4xl md:text-6xl font-bold text-white dark:text-gray-900 mb-6">
           ارتباط با
           <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -66,10 +67,7 @@ export default function ContactPage() {
             color: "from-green-500 to-green-600",
           },
         ].map((item, index) => (
-          <div
-            key={index}
-            className="group bg-white/5 dark:bg-gray-300/30 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/10 dark:border-gray-200/20 hover:border-blue-500/50 transition-all hover:-translate-y-1 hover:shadow-xl"
-          >
+          <Container key={index} variant="white" className="text-center group">
             <div
               className={`inline-flex p-4 rounded-2xl bg-linear-to-r ${item.color} mb-4 group-hover:scale-110 transition-transform`}
             >
@@ -87,7 +85,7 @@ export default function ContactPage() {
             <p className="text-gray-400 dark:text-gray-500 text-sm mt-1">
               {item.sub}
             </p>
-          </div>
+          </Container>
         ))}
       </section>
 
@@ -100,44 +98,40 @@ export default function ContactPage() {
           جدیدترین اخبار و مطالب را در شبکه‌های اجتماعی ما دنبال کنید
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
-          <Link
-            href="#"
-            className="p-4 bg-white/10 dark:bg-gray-300/30 rounded-2xl hover:bg-blue-500/20 transition-all hover:-translate-y-1"
-          >
-            <FaTelegram className="w-6 h-6 text-blue-400" />
-          </Link>
-          <Link
-            href="#"
-            className="p-4 bg-white/10 dark:bg-gray-300/30 rounded-2xl hover:bg-pink-500/20 transition-all hover:-translate-y-1"
-          >
-            <FaInstagram className="w-6 h-6 text-pink-400" />
-          </Link>
-          <Link
-            href="#"
-            className="p-4 bg-white/10 dark:bg-gray-300/30 rounded-2xl hover:bg-blue-400/20 transition-all hover:-translate-y-1"
-          >
-            <FaTwitter className="w-6 h-6 text-blue-400" />
-          </Link>
-          <Link
-            href="#"
-            className="p-4 bg-white/10 dark:bg-gray-300/30 rounded-2xl hover:bg-red-500/20 transition-all hover:-translate-y-1"
-          >
-            <FaYoutube className="w-6 h-6 text-red-400" />
-          </Link>
-          <Link
-            href="#"
-            className="p-4 bg-white/10 dark:bg-gray-300/30 rounded-2xl hover:bg-gray-500/20 transition-all hover:-translate-y-1"
-          >
-            <FaGithub className="w-6 h-6 text-gray-400" />
-          </Link>
-          <Link
-            href="#"
-            className="p-4 bg-white/10 dark:bg-gray-300/30 rounded-2xl hover:bg-blue-600/20 transition-all hover:-translate-y-1"
-          >
-            <FaLinkedin className="w-6 h-6 text-blue-400" />
-          </Link>
+          {[
+            {
+              icon: FaTelegram,
+              color: "text-blue-400",
+            },
+            {
+              icon: FaInstagram,
+              color: "text-pink-400",
+            },
+            {
+              icon: FaTwitter,
+              color: "text-blue-400",
+            },
+            {
+              icon: FaYoutube,
+              color: "text-red-400",
+            },
+            {
+              icon: FaGithub,
+              color: "text-gray-400",
+            },
+            {
+              icon: FaLinkedin,
+              color: "text-blue-400",
+            },
+          ].map((item, index) => (
+            <Link href="#" key={"social-icon" + index}>
+              <Container variant="white" className="p-3">
+                <item.icon className={`size-8 ${item.color}`} />
+              </Container>
+            </Link>
+          ))}
         </div>
       </section>
-    </div>
+    </Container>
   );
 }

@@ -18,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-slate-800 dark:bg-slate-100 font-[vazir]" dir="rtl">
+      <body
+        dir="rtl"
+        className="bg-linear-to-b from-purple-900/20 via-blue-900/20 to-purple-900/20 dark:from-purple-200/30 dark:via-blue-200/30 dark:to-purple-200/30 font-[vazir]"
+      >
         <Navbar />
         <ReactQueryProvider>
           <div className="lg:max-w-5xl lg:mx-auto *:my-5">

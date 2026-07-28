@@ -1,5 +1,6 @@
 "use client";
 
+import Container from "@/_components/Container";
 import Link from "next/link";
 import { useEffect } from "react";
 import { FaHome, FaRedo } from "react-icons/fa";
@@ -15,7 +16,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
   }, [error]);
 
   return (
-    <div className="min-h-[80vh] text-center bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-50 dark:to-gray-100 flex flex-col items-center justify-center gap-5 p-4 mx-5 lg:mx-0 rounded-xl overflow-hidden">
+    <Container>
       <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900 mb-4">
         خطا در{" "}
         <span className="text-red-400 dark:text-red-600 inline-block">
@@ -45,6 +46,6 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
           صفحه اصلی
         </Link>
       </div>
-    </div>
+    </Container>
   );
 }
