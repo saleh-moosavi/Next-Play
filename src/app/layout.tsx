@@ -1,7 +1,7 @@
 import "./globals.css";
 import "keen-slider/keen-slider.min.css";
 import type { Metadata } from "next";
-import Navbar from "@/_components/Navbar";
+import Header from "@/_components/Header";
 import Footer from "@/_components/Footer";
 import BackToTopBtn from "@/_components/BackToTopBtn";
 import ReactQueryProvider from "@/providers/reactQueryProvider";
@@ -22,7 +22,7 @@ export default function RootLayout({
         dir="rtl"
         className="bg-linear-to-b from-purple-900/20 via-blue-900/20 to-purple-900/20 dark:from-purple-200/30 dark:via-blue-200/30 dark:to-purple-200/30 font-[vazir]"
       >
-        <Navbar />
+        <Header />
         <ReactQueryProvider>
           <div className="lg:max-w-5xl lg:mx-auto *:my-5">
             <BackToTopBtn />
