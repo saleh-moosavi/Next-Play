@@ -14,7 +14,6 @@ const menuItems = [
 export default function Header() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [sidebar, setSidebar] = useState(false);
-  const [searchbar, setSearchbar] = useState(true);
 
   const sidebarChange = () => {
     setSidebar(!sidebar);
@@ -45,15 +44,15 @@ export default function Header() {
   return (
     <>
       <Navbar
-        searchbar={searchbar}
-        setSearchbar={setSearchbar}
         isDarkMode={isDarkMode}
         toggleDarkMode={toggleDarkMode}
         menuItems={menuItems}
       />
       <Sidebar
-        sidebarChange={sidebarChange}
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
         sidebar={sidebar}
+        sidebarChange={sidebarChange}
         menuItems={menuItems}
       />
     </>

@@ -1,15 +1,20 @@
 import Link from "next/link";
+import SearchInput from "./SearchInput";
 import { PiList } from "react-icons/pi";
 import { FaGamepad } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
+import { IoMdClose, IoMdMoon, IoMdSunny } from "react-icons/io";
 
 export default function Sidebar({
-  sidebarChange,
   sidebar,
+  sidebarChange,
+  isDarkMode,
+  toggleDarkMode,
   menuItems,
 }: {
-  sidebarChange: () => void;
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
   sidebar: boolean;
+  sidebarChange: () => void;
   menuItems: {
     title: string;
     href: string;
@@ -44,7 +49,18 @@ export default function Sidebar({
           }`}
         >
           <div className="flex flex-col h-full p-6">
-            <div className="flex justify-end items-center mb-8">
+            <div className="flex justify-between items-center mb-8">
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 hover:bg-white/10 rounded-full transition-all duration-300"
+                aria-label="تم صفحه"
+              >
+                {isDarkMode ? (
+                  <IoMdSunny className="text-yellow-500 w-6 h-6" />
+                ) : (
+                  <IoMdMoon className="text-stone-300 w-6 h-6" />
+                )}
+              </button>
               <button
                 onClick={sidebarChange}
                 className="p-2 hover:bg-white/10 rounded-full transition-all duration-300"
@@ -74,6 +90,7 @@ export default function Sidebar({
                   </Link>
                 </li>
               ))}
+              <SearchInput />
             </ul>
 
             <div className="mt-auto pt-6 border-t border-white/20">

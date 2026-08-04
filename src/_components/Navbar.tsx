@@ -1,18 +1,13 @@
 import Link from "next/link";
-import { CiSearch } from "react-icons/ci";
+import SearchInput from "./SearchInput";
 import { FaGamepad } from "react-icons/fa";
-import { Dispatch, SetStateAction } from "react";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 
 export default function Navbar({
-  searchbar,
-  setSearchbar,
   isDarkMode,
   toggleDarkMode,
   menuItems,
 }: {
-  searchbar: boolean;
-  setSearchbar: Dispatch<SetStateAction<boolean>>;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
   menuItems: {
@@ -37,19 +32,7 @@ export default function Navbar({
         </ul>
 
         <article className="gap-x-5 items-center hidden md:flex">
-          <label className="flex gap-x-5 items-center relative">
-            <CiSearch
-              className={`${
-                searchbar ? "" : "absolute right-2"
-              } cursor-pointer dark:text-gray-900`}
-              onClick={() => setSearchbar(!searchbar)}
-            />
-            <input
-              type="text"
-              className={`rounded-full bg-transparent border dark:text-gray-900 dark:border-gray-900 text-xs pl-2 pr-7 py-1 outline-none transition-all duration-500
-          ${searchbar ? "w-0 hidden" : "w-28 md:w-52"}`}
-            />
-          </label>
+          <SearchInput />
           <div onClick={toggleDarkMode} className="cursor-pointer">
             {isDarkMode ? (
               <IoMdSunny className="text-yellow-500" />
