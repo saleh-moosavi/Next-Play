@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SearchResult } from "@/types/searchPageTypes";
+import { extractGameUrl } from "@/lib/utils";
 
 export default function SearchItemCard({ item }: { item: SearchResult }) {
   const getTypeColor = (type: SearchResult["type"]) => {
@@ -33,9 +34,24 @@ export default function SearchItemCard({ item }: { item: SearchResult }) {
     }
   };
 
+  const getLink = (type: SearchResult["type"]) => {
+    switch (type) {
+      case "game":
+        return `/game?slug=${extractGameUrl(item.url)}`;
+      case "news":
+        return `/news?slug=${extractGameUrl(item.url)}`;
+      case "trailer":
+        return `/trailer?slug=${item.url.split("/").filter(Boolean).pop() || ""}`;
+      case "mobile":
+        return `/mobile?slug=${extractGameUrl(item.url)}`;
+      default:
+        return "/";
+    }
+  };
+
   return (
     <Link
-      href={item.url || "#"}
+      href={getLink(item.type) || "#"}
       className="group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl border border-white/10"
     >
       <div className="relative aspect-video bg-gray-800/50 overflow-hidden">
