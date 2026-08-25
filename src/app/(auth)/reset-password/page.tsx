@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Button from "@/_components/Button";
 import { FormEvent, useState } from "react";
 import AuthWrapper from "../_components/AuthWrapper";
 
@@ -31,12 +32,9 @@ export default function ResetPassword() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <button
-          type="submit"
-          className="w-full py-3 bg-linear-to-r from-purple-800 to-purple-600 hover:shadow-[0_0_5px_#FFF] text-gray-200 rounded-md font-semibold focus:outline-none transition-all duration-300"
-        >
+        <Button type="submit" color="purple" rounded="md" width="full">
           تایید
-        </button>
+        </Button>
       </form>
 
       <hr className="border-gray-400 mt-5" />

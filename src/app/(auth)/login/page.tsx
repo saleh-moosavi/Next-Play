@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Input from "@/_components/Input";
+import Button from "@/_components/Button";
 import { FormEvent, useState } from "react";
 import Socials from "../_components/Socials";
 import AuthWrapper from "../_components/AuthWrapper";
@@ -39,17 +40,14 @@ export default function Login() {
         <div className="mt-2 block">
           <Link
             href={"/reset-password"}
-            className="text-xs text-gray-400 dark:text-gray-600 hover:underline"
+            className="text-xs text-indigo-400 dark:text-indigo-700 hover:underline"
           >
             رمز عبور خود را فراموش کرده اید ؟
           </Link>
         </div>
-        <button
-          type="submit"
-          className="w-full py-3 bg-linear-to-r from-purple-800 to-purple-600 hover:shadow-[0_0_5px_#FFF] text-gray-200 rounded-md font-semibold focus:outline-none transition-all duration-300"
-        >
+        <Button type="submit" color="purple" rounded="md" width="full">
           ورود
-        </button>
+        </Button>
       </form>
 
       <div className="flex items-center my-4">

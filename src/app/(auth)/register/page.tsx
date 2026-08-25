@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Input from "@/_components/Input";
+import Button from "@/_components/Button";
 import { FormEvent, useState } from "react";
 import Socials from "../_components/Socials";
 import AuthWrapper from "../_components/AuthWrapper";
@@ -44,12 +45,9 @@ export default function Register() {
           onChange={(e) => setRePassword(e.target.value)}
         />
 
-        <button
-          type="submit"
-          className="w-full py-3 bg-linear-to-r from-purple-800 to-purple-600 hover:shadow-[0_0_5px_#FFF] text-gray-200 rounded-md font-semibold focus:outline-none transition-all duration-300"
-        >
+        <Button type="submit" color="purple" rounded="md" width="full">
           ثبت نام
-        </button>
+        </Button>
       </form>
 
       <div className="flex items-center my-4">
